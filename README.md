@@ -5,8 +5,6 @@
 
 
 
-- 🔭 CS Student
+- 🔭 CS Student at UET
 - 🌱 Technical writer at https://mlaibanasirdev.medium.com/
-- .
-- 
--->
+
