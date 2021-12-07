@@ -6,5 +6,5 @@
 
 
 - 🔭 CS Student at UET
-- 🌱 Technical writer at medium
+- 🌱 Technical writer at medium and dev.to
 
