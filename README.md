@@ -1,40 +1,45 @@
-# Hi, I'm Laiba Nasir 👋
+# Laiba Nasir
 
-## 🚀 Full-Stack Developer | AI Enthusiast | Open Source Contributor
+## 👩‍💻 About Me
+- JavaScript, TypeScript, and Python developer
+- Currently a Senior Technical Support Engineer at Eon
 
-I'm a **JavaScript, TypeScript, and Python developer** dedicated to writing full-stack code and designing scalable systems. My current focus is on building **AI DevTooling** and developing innovative solutions that enhance developer experiences.
+## 💼 Experience
+- **Senior Technical Support Engineer** at Eon [🔗](https://eonhealth.com/)
+  - Providing technical support for health tech applications focused on cancer patient monitoring
+  - Collaborating with cross-functional teams to enhance product features
+  - Documenting processes and creating knowledge-base articles
 
-### 🌟 Skills and Technologies:
+- **Technical Support Engineer** at i2c [🔗](https://www.i2cinc.com/) (2022 - 2024)
+  - Provided technical support for software applications
+  - Collaborated with development teams for issue resolution
+  - Documented processes and created knowledge-base articles
+
+## 🔧 Proficient Technologies
 - **Languages**: JavaScript, TypeScript, Python
-- **Frontend**: React, Next.js
-- **Backend**: Node.js, Express, Flask, Hono
-- **Databases**: Firebase (Firestore), Supabase
+- **Frameworks**: React, Next.js, Express, Node.js
+- **Databases**: MongoDB, Firebase (Firestore)
+- **Others**: HTML, CSS, Git, REST APIs, Agile and Scrum methodologies
 
-### 🔭 Current Focus:
-I am involved in creating tools and applications that leverage AI to improve the development process. My goal is to contribute to open-source projects and make impactful innovations in the tech community.
+## 📚 Goals
+- Build a MERN stack full-stack project
+- Explore AI DevTooling opportunities
+- Learn Flask and incorporate it into future projects
+- Contribute to open-source projects
+- Share knowledge through technical writing
 
-### 📚 Highlights of My Journey:
-- **Open Source**: Actively working on various tools and applications, contributing to the developer community.
-- **Technical Writing**: Engaging in writing articles and guides on web technologies and development practices.
-- **Teaching Experience**: Experience in teaching frontend development concepts to aspiring developers.
+## 📝 Articles
+- [Medium](https://laibanasirdev.medium.com/)
+- [Dev.to](https://dev.to/laibanasirdev)
 
-### 🌱 Future Aspirations:
-- Continue to enhance my skills in full-stack development and AI integration.
-- Expand my contributions to open-source projects and foster collaboration within the tech community.
-- Seek opportunities to mentor and support emerging developers in their learning journey.
+## 🎓 Education
+- Bachelor's in Computer Science
 
-### 💬 Let's Connect:
-I'm always eager to collaborate on projects or discuss innovative ideas. Feel free to reach out!
-- **LinkedIn**: [Laiba Nasir](https://www.linkedin.com/in/laibanasirdev/)
-- **GitHub**: [laibanasirdev](https://github.com/laibanasirdev)
-- **Email**: laibanasirdev@gmail.com
+## 📬 Get in Touch
+- [LinkedIn](https://www.linkedin.com/in/laibanasirdev/)
+- [GitHub](https://github.com/laibanasirdev)
 
----
-
-### 🌟 Fun Fact:
-I have a strong interest in **health and environmental issues** and have actively participated in organizing events focused on these topics. I believe in using technology to make a positive impact in my community.
-
----
-
-> "The best way to predict the future is to invent it." – Alan Kay
-
+## 🌱 Continuous Learning
+- Committed to improving skills in web development and AI technologies
+- Aiming to develop a personal portfolio
+- Interested in collaborative projects for growth
