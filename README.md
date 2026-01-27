@@ -2,7 +2,7 @@
 
 ## 👩‍💻 About Me
 - JavaScript, TypeScript, and Python developer
-- Currently a Senior Technical Support Engineer at Eon
+- Currently a  Technical Support Engineer TIER III at Contours
 
 ## 💼 Experience
 - **Senior Technical Support Engineer** at Eon [🔗](https://eonhealth.com/)
