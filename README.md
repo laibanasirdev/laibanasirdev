@@ -1,45 +1,55 @@
 # Laiba Nasir
 
-## 👩‍💻 About Me
-- JavaScript, TypeScript, and Python developer
-- Currently a  Technical Support Engineer TIER III at Contours
+AI Engineer & Builder based in Lahore, Pakistan.
+Incoming MS AI @ Northeastern University · Spring 2027.
 
-## 💼 Experience
-- **Senior Technical Support Engineer** at Eon [🔗](https://eonhealth.com/)
-  - Providing technical support for health tech applications focused on cancer patient monitoring
-  - Collaborating with cross-functional teams to enhance product features
-  - Documenting processes and creating knowledge-base articles
+🏆 Winner — Global AI & Blockchain Hackathon (AKTI)
+⚡ Arfa Karim Fellow — AI & Blockchain
 
-- **Technical Support Engineer** at i2c [🔗](https://www.i2cinc.com/) (2022 - 2024)
-  - Provided technical support for software applications
-  - Collaborated with development teams for issue resolution
-  - Documented processes and created knowledge-base articles
+---
 
-## 🔧 Proficient Technologies
-- **Languages**: JavaScript, TypeScript, Python
-- **Frameworks**: React, Next.js, Express, Node.js
-- **Databases**: MongoDB, Firebase (Firestore)
-- **Others**: HTML, CSS, Git, REST APIs, Agile and Scrum methodologies
+## Work
 
-## 📚 Goals
-- Build a MERN stack full-stack project
-- Explore AI DevTooling opportunities
-- Learn Flask and incorporate it into future projects
-- Contribute to open-source projects
-- Share knowledge through technical writing
+**Product Support Specialist, Tier III** · DIS Contours Software *(Jul 2025 – present)*
+Deep code analysis and debugging across enterprise ERP systems. Tier II & III incident resolution.
 
-## 📝 Articles
-- [Medium](https://laibanasirdev.medium.com/)
-- [Dev.to](https://dev.to/laibanasirdev)
+**Senior Technical Support Engineer** · Eon Health *(Sep 2024 – Apr 2025)*
+Healthcare applications support. ELK monitoring, AWS S3/CloudFront, Node.js config. Built a Python Excel-to-JSON parser that cut manual data transformation time by 60%.
 
-## 🎓 Education
-- Bachelor's in Computer Science
+**Software Engineer — Product Support** · i2cinc *(Oct 2022 – Sep 2024)*
+API integrations and client module configuration. 3 major launches, zero critical errors. 95% customer satisfaction, 100% SLA compliance.
 
-## 📬 Get in Touch
-- [LinkedIn](https://www.linkedin.com/in/laibanasirdev/)
-- [GitHub](https://github.com/laibanasirdev)
+---
 
-## 🌱 Continuous Learning
-- Committed to improving skills in web development and AI technologies
-- Aiming to develop a personal portfolio
-- Interested in collaborative projects for growth
+## Projects
+
+- **[JusticeVault](https://github.com/laibanasirdev/JusticeVault)** — Real-time document monitoring middleware. AES-256 encryption + SHA-256 hashing for immutable digital fingerprints.
+- **[GridGuard](https://github.com/laibanasirdev/GridGuard)** — AI-powered electricity theft detection. FastAPI deployment, SHAP/LIME explainability.
+- **Voice Assistant for Accessibility** — NLP-driven voice assistant for disabled users. Intent parsing + low-latency command execution.
+- **Plant Disease Detector** — CNN model (90%+ accuracy) integrated into a Flutter mobile app.
+- **Timetable Management App** — MERN stack. 20% faster load time via query optimization.
+- **E-Commerce Platforms** — 3+ MERN storefronts for local brands with payment gateway integration.
+
+---
+
+## Skills
+
+**AI / ML** — Python, TensorFlow, CNN, FastAPI, Flask, NLP, SHAP, LIME  
+**Backend** — Node.js, Express, REST, SOAP APIs, Java  
+**Frontend** — React, Next.js, Tailwind CSS, Flutter  
+**Databases** — MongoDB, MySQL, PostgreSQL  
+**Cloud** — AWS (S3, CloudFront), GCP, ELK Stack, Linux, Git  
+**Learning** — Solidity, Ethers.js, IPFS
+
+---
+
+## Education
+
+**MS in Artificial Intelligence** · Northeastern University *(incoming Spring 2027)*  
+**BS in Computer Science** · UET Lahore *(2018 – 2022)*
+
+---
+
+## Links
+
+[Portfolio](https://laibanasirdev.github.io/laibanasirdev) · [LinkedIn](https://www.linkedin.com/in/laibanasir) · [Medium](https://laibanasirdev.medium.com/) · [Dev.to](https://dev.to/laibanasirdev) · laibanasirdev@gmail.com
