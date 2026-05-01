@@ -52,4 +52,4 @@ API integrations and client module configuration. 3 major launches, zero critica
 
 ## Links
 
-[Portfolio](https://laibanasirdev.github.io/laibanasirdev) · [LinkedIn](https://www.linkedin.com/in/laibanasir) · [Medium](https://laibanasirdev.medium.com/) · [Dev.to](https://dev.to/laibanasirdev) · laibanasirdev@gmail.com
+[Portfolio](laibanasir.dev/laibanasirdev) · [LinkedIn](https://www.linkedin.com/in/laibanasir) · [Medium](https://laibanasirdev.medium.com/) · [Dev.to](https://dev.to/laibanasirdev) · laibanasirdev@gmail.com
