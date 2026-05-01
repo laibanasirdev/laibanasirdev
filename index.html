@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laiba Nasir — AI + Blockchain Engineer</title>
+<meta name="description" content="AI Engineer and Blockchain Developer building intelligent systems for fintech, legaltech and healthtech. Based in Lahore, Pakistan.">
+<meta property="og:title" content="Laiba Nasir — AI + Blockchain Engineer">
+<meta property="og:description" content="Building intelligent systems at the intersection of AI and Blockchain.">
+<meta property="og:url" content="https://laibanasir.dev">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0908;
+  --bg2: #111009;
+  --surface: #161410;
+  --surface2: #1e1b14;
+  --border: #2a2620;
+  --border2: #352f25;
+  --text: #f0ebe0;
+  --muted: #6b6355;
+  --muted2: #8a7d6a;
+  --accent: #d4a853;
+  --accent2: #e8c07a;
+  --accent3: #b8833a;
+  --green: #5a8a5a;
+  --blue: #4a7a9b;
+  --red: #8a4a4a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* ── noise overlay ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
+}
+
+/* ── grid bg ── */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ── layout ── */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── nav ── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10,9,8,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted2);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* ── hero ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 0 80px;
+  position: relative;
+}
+
+.hero-tag {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-tag::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(42px, 7vw, 80px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 13px;
+  color: var(--muted2);
+  margin: 28px 0 40px;
+  max-width: 460px;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: crosshair;
+}
+
+.btn-primary:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 1px solid var(--border2);
+  color: var(--muted2);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: crosshair;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── stats strip ── */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 80px 0;
+}
+
+.stat-item {
+  padding: 28px 24px;
+  border-right: 1px solid var(--border);
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-num {
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+/* ── section ── */
+.section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.section-num {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+/* ── projects grid ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+}
+
+@media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } }
+
+.project-card {
+  background: var(--bg);
+  padding: 28px;
+  transition: background 0.2s;
+  cursor: crosshair;
+  text-decoration: none;
+  display: block;
+}
+
+.project-card:hover { background: var(--surface); }
+
+.project-card.featured {
+  grid-column: 1 / -1;
+  background: var(--surface);
+}
+
+.project-type {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.project-name {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.project-desc {
+  font-size: 12px;
+  color: var(--muted2);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.ptag {
+  font-size: 10px;
+  padding: 3px 8px;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.project-link {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-link::after { content: '→'; transition: transform 0.2s; }
+.project-card:hover .project-link::after { transform: translateX(4px); }
+
+/* ── services ── */
+.services-list {
+  display: grid;
+  gap: 1px;
+  background: var(--border);
+}
+
+.service-row {
+  background: var(--bg);
+  padding: 24px 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  transition: background 0.2s;
+}
+
+.service-row:hover { background: var(--surface); }
+
+.service-num {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  min-width: 28px;
+  margin-top: 2px;
+}
+
+.service-content { flex: 1; }
+
+.service-name {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.service-desc {
+  font-size: 12px;
+  color: var(--muted2);
+  line-height: 1.6;
+}
+
+.service-price {
+  font-size: 12px;
+  color: var(--accent);
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+/* ── skills ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+
+@media (max-width: 600px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.skill-group {
+  background: var(--bg);
+  padding: 24px;
+}
+
+.skill-group h4 {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.skill-item {
+  font-size: 12px;
+  color: var(--muted2);
+  padding: 3px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.skill-item:last-child { border-bottom: none; }
+
+.skill-item::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--border2);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── experience ── */
+.exp-list { display: grid; gap: 1px; background: var(--border); }
+
+.exp-row {
+  background: var(--bg);
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  transition: background 0.2s;
+}
+
+.exp-row:hover { background: var(--surface); }
+
+.exp-period {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  padding-top: 3px;
+}
+
+.exp-role {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.exp-company {
+  font-size: 12px;
+  color: var(--accent);
+  margin: 2px 0 6px;
+}
+
+.exp-desc {
+  font-size: 12px;
+  color: var(--muted2);
+  line-height: 1.6;
+}
+
+/* ── contact ── */
+.contact-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  margin-bottom: 40px;
+}
+
+@media (max-width: 600px) { .contact-block { grid-template-columns: 1fr; } }
+
+.contact-item {
+  background: var(--bg);
+  padding: 24px 28px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+}
+
+.contact-item:hover { background: var(--surface); }
+
+.contact-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.contact-value {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+/* ── footer ── */
+footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--accent); }
+
+/* ── status indicator ── */
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  margin-right: 6px;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(90,138,90,0.4); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 4px rgba(90,138,90,0); }
+}
+
+/* ── scroll animations ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── mobile ── */
+@media (max-width: 600px) {
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .exp-row { grid-template-columns: 1fr; gap: 4px; }
+  nav { padding: 12px 16px; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Laiba Nasir</a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#skills">Stack</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-tag">
+      <span class="status-dot"></span>
+      Available for projects · Lahore, Pakistan
+    </div>
+
+    <h1>
+      AI &amp; <em>Blockchain</em><br>
+      Engineer
+    </h1>
+
+    <p class="hero-sub">
+      I build things that work in production — not just demos. 3.5 years in fintech and healthtech taught me what enterprise software actually needs. Now I'm building AI systems on top of that foundation.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Start a project</a>
+      <a href="#projects" class="btn-secondary">View work</a>
+      <a href="https://github.com/laibanasirdev" class="btn-secondary" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip reveal">
+    <div class="stat-item">
+      <div class="stat-num">🏆</div>
+      <div class="stat-label">Global AI Hackathon Winner</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3.5+</div>
+      <div class="stat-label">Years fintech &amp; healthtech</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">NEU</div>
+      <div class="stat-label">MS AI — Northeastern 2027</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">AI+⛓</div>
+      <div class="stat-label">Blockchain combined</div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Selected work</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Featured — JusticeVault -->
+      <a class="project-card featured reveal" href="https://github.com/laibanasirdev/JusticeVault" target="_blank">
+        <div class="project-type">
+          <span class="project-dot" style="background:#b8833a"></span>
+          AI · Blockchain · Legaltech
+        </div>
+        <div class="project-name">JusticeVault</div>
+        <p class="project-desc">Legal evidence needs to be tamper-proof before AI touches it. JusticeVault hashes every document on a blockchain before analysis — if the file changes, the AI never sees it. Lawyers submit, the chain verifies integrity, Claude generates the case brief, judges validate. Built with a full Solidity contract, Python oracle, and Streamlit UI.</p>
+        <div class="project-tags">
+          <span class="ptag">Python</span>
+          <span class="ptag">Solidity</span>
+          <span class="ptag">Claude API</span>
+          <span class="ptag">IPFS</span>
+          <span class="ptag">Streamlit</span>
+          <span class="ptag">Foundry</span>
+          <span class="ptag">Web3.py</span>
+        </div>
+        <span class="project-link">View on GitHub</span>
+      </a>
+
+      <!-- GridGuard — Hackathon Winner -->
+      <a class="project-card reveal" href="https://github.com/laibanasirdev/GridGuard" target="_blank">
+        <div class="project-type">
+          <span class="project-dot" style="background:#d4a853"></span>
+          ML · Fintech · 🏆 Global Hackathon Winner
+        </div>
+        <div class="project-name">GridGuard</div>
+        <p class="project-desc">Electricity theft costs utilities billions. I built an ML pipeline that detects it — preprocessing, training multiple models, tuning hyperparameters, then explaining predictions with SHAP and LIME so the output is actually usable. Deployed via FastAPI. Won the Global AI &amp; Blockchain Hackathon (AKTI).</p>
+        <div class="project-tags">
+          <span class="ptag">Python</span>
+          <span class="ptag">FastAPI</span>
+          <span class="ptag">scikit-learn</span>
+          <span class="ptag">SHAP</span>
+          <span class="ptag">LIME</span>
+          <span class="ptag">ML pipeline</span>
+        </div>
+        <span class="project-link">View on GitHub</span>
+      </a>
+
+      <!-- AI Resume Generator -->
+      <a class="project-card reveal" href="https://github.com/laibanasirdev/ai-resume-generator" target="_blank">
+        <div class="project-type">
+          <span class="project-dot" style="background:#4a7a9b"></span>
+          AI · SaaS · Live on Vercel
+        </div>
+        <div class="project-name">AI Resume Generator</div>
+        <p class="project-desc">Most resume builders are templates with your name swapped in. This one reads the job description, understands what it's asking for, and rewrites your resume to match — cover letter included. FastAPI backend, Next.js frontend, deployed on Vercel.</p>
+        <div class="project-tags">
+          <span class="ptag">FastAPI</span>
+          <span class="ptag">Next.js</span>
+          <span class="ptag">LLM API</span>
+          <span class="ptag">TypeScript</span>
+          <span class="ptag">Vercel</span>
+        </div>
+        <span class="project-link">View live</span>
+      </a>
+
+      <!-- ScriptForge AI -->
+      <a class="project-card reveal" href="https://github.com/laibanasirdev" target="_blank">
+        <div class="project-type">
+          <span class="project-dot" style="background:#5a8a5a"></span>
+          AI · SaaS · Developer tools
+        </div>
+        <div class="project-name">ScriptForge AI</div>
+        <p class="project-desc">Describe what you want to automate in plain English. Get back a working Python script with error handling, logging, and CLI arguments — not a snippet, a full script you can actually run. Built with Claude API and Streamlit. Free tier, Pro via Gumroad.</p>
+        <div class="project-tags">
+          <span class="ptag">Claude API</span>
+          <span class="ptag">Streamlit</span>
+          <span class="ptag">Python</span>
+          <span class="ptag">Gumroad</span>
+        </div>
+        <span class="project-link">View live</span>
+      </a>
+
+      <!-- RecSnap -->
+      <a class="project-card reveal" href="https://github.com/laibanasirdev" target="_blank">
+        <div class="project-type">
+          <span class="project-dot" style="background:#8a4a4a"></span>
+          Chrome Extension · Open source
+        </div>
+        <div class="project-name">RecSnap</div>
+        <p class="project-desc">A screen recorder that doesn't ask for your email, doesn't upload your video anywhere, and doesn't have a free trial. Just records. Pure browser API — screen, tab, or window, with mic if you want it. Saves locally as WebM.</p>
+        <div class="project-tags">
+          <span class="ptag">Chrome Extension</span>
+          <span class="ptag">JavaScript</span>
+          <span class="ptag">MediaRecorder API</span>
+          <span class="ptag">Manifest V3</span>
+        </div>
+        <span class="project-link">View project</span>
+      </a>
+
+      <!-- Automation Script Pack — full width -->
+      <a class="project-card reveal" href="https://github.com/laibanasirdev/automation-script-pack" target="_blank" style="grid-column:1/-1">
+        <div class="project-type">
+          <span class="project-dot" style="background:#6b6355"></span>
+          Python · Automation · Open source
+        </div>
+        <div class="project-name">Automation Script Pack</div>
+        <p class="project-desc">10 Python scripts for the tasks everyone says they'll automate but never does — email campaigns, site monitors, CSV to Excel, web scrapers, price trackers, duplicate finders, async API callers. All have proper error handling, logging, CLI interfaces, and READMEs. Not tutorials. Working scripts.</p>
+        <div class="project-tags">
+          <span class="ptag">Python</span>
+          <span class="ptag">asyncio</span>
+          <span class="ptag">BeautifulSoup</span>
+          <span class="ptag">openpyxl</span>
+          <span class="ptag">SQLite</span>
+          <span class="ptag">schedule</span>
+        </div>
+        <span class="project-link">View on GitHub</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">What I build</h2>
+    </div>
+
+    <div class="services-list reveal">
+      <div class="service-row">
+        <span class="service-num">01</span>
+        <div class="service-content">
+          <div class="service-name">AI Agent Systems</div>
+          <div class="service-desc">Multi-agent workflows using LangGraph and CrewAI. RAG pipelines with source citation. LLM orchestration with guardrails, PII detection, and human-in-the-loop review. Production-grade with LangSmith observability.</div>
+        </div>
+        <div class="service-price">from $500</div>
+      </div>
+      <div class="service-row">
+        <span class="service-num">02</span>
+        <div class="service-content">
+          <div class="service-name">Blockchain Development</div>
+          <div class="service-desc">Solidity smart contracts (ERC-20, ERC-721, custom logic). Python oracle systems bridging on-chain events to off-chain AI. Smart contract auditing with Foundry + Slither. IPFS integration.</div>
+        </div>
+        <div class="service-price">from $800</div>
+      </div>
+      <div class="service-row">
+        <span class="service-num">03</span>
+        <div class="service-content">
+          <div class="service-name">RAG Chatbots & Document AI</div>
+          <div class="service-desc">Upload any document set — PDFs, manuals, knowledge bases. Ask questions, get cited answers. White-label for law firms, HR teams, real estate agencies. $99/mo per workspace.</div>
+        </div>
+        <div class="service-price">from $300</div>
+      </div>
+      <div class="service-row">
+        <span class="service-num">04</span>
+        <div class="service-content">
+          <div class="service-name">Python Automation</div>
+          <div class="service-desc">Email campaigns, web scrapers, data pipelines, Excel automation, API integrations, async task runners. Production-ready with logging, error handling, and CLI interfaces.</div>
+        </div>
+        <div class="service-price">from $50</div>
+      </div>
+      <div class="service-row">
+        <span class="service-num">05</span>
+        <div class="service-content">
+          <div class="service-name">Full-Stack AI Products</div>
+          <div class="service-desc">End-to-end SaaS products combining FastAPI backend, React frontend, vector database, LLM layer, and Stripe billing. From MVP to production deployment with CI/CD.</div>
+        </div>
+        <div class="service-price">from $2,000</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="section-header reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Tech stack</h2>
+    </div>
+
+    <div class="skills-grid reveal">
+      <div class="skill-group">
+        <h4>AI / LLM</h4>
+        <div class="skill-item">Python</div>
+        <div class="skill-item">Claude API</div>
+        <div class="skill-item">OpenAI / Groq</div>
+        <div class="skill-item">LangChain</div>
+        <div class="skill-item">RAG systems</div>
+        <div class="skill-item">TensorFlow / CNN</div>
+        <div class="skill-item">SHAP / LIME</div>
+        <div class="skill-item">FastAPI</div>
+      </div>
+      <div class="skill-group">
+        <h4>Blockchain</h4>
+        <div class="skill-item">Solidity</div>
+        <div class="skill-item">Foundry</div>
+        <div class="skill-item">Web3.py</div>
+        <div class="skill-item">IPFS / Pinata</div>
+        <div class="skill-item">ERC-20 / ERC-721</div>
+        <div class="skill-item">Smart contracts</div>
+        <div class="skill-item">Python oracles</div>
+        <div class="skill-item">Ethers.js</div>
+      </div>
+      <div class="skill-group">
+        <h4>Backend</h4>
+        <div class="skill-item">Node.js / Express</div>
+        <div class="skill-item">REST / SOAP APIs</div>
+        <div class="skill-item">PostgreSQL / MongoDB</div>
+        <div class="skill-item">SQLite</div>
+        <div class="skill-item">AWS S3 / CloudFront</div>
+        <div class="skill-item">ELK Stack</div>
+        <div class="skill-item">Docker basics</div>
+        <div class="skill-item">CI/CD (GitHub Actions)</div>
+      </div>
+      <div class="skill-group">
+        <h4>Frontend</h4>
+        <div class="skill-item">React + TypeScript</div>
+        <div class="skill-item">Next.js</div>
+        <div class="skill-item">Streamlit</div>
+        <div class="skill-item">Tailwind CSS</div>
+        <div class="skill-item">Chrome Extensions</div>
+        <div class="skill-item">Flutter</div>
+        <div class="skill-item">Stripe</div>
+        <div class="skill-item">Vercel / Railway</div>
+      </div>
+      <div class="skill-group">
+        <h4>Data / ML</h4>
+        <div class="skill-item">Pandas + NumPy</div>
+        <div class="skill-item">scikit-learn</div>
+        <div class="skill-item">BeautifulSoup</div>
+        <div class="skill-item">openpyxl</div>
+        <div class="skill-item">Hugging Face</div>
+        <div class="skill-item">Jupyter</div>
+        <div class="skill-item">Postman</div>
+        <div class="skill-item">Git / GitHub</div>
+      </div>
+      <div class="skill-group">
+        <h4>Domain</h4>
+        <div class="skill-item">Fintech (i2c — 2yrs)</div>
+        <div class="skill-item">Healthtech (Eon)</div>
+        <div class="skill-item">Enterprise ERP (DIS)</div>
+        <div class="skill-item">Legaltech (JusticeVault)</div>
+        <div class="skill-item">API integrations</div>
+        <div class="skill-item">Technical writing</div>
+        <div class="skill-item">Agile / Scrum</div>
+        <div class="skill-item">Linux</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <div class="section-header reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+
+    <div class="exp-list reveal">
+      <div class="exp-row">
+        <div class="exp-period">2025 — present</div>
+        <div>
+          <div class="exp-role">Product Support Specialist, Tier III</div>
+          <div class="exp-company">Contour Software · DIS division · Lahore</div>
+          <div class="exp-desc">I resolve the tickets that escalate past everyone else — core logic failures, multi-tiered production incidents, the kind with no clear playbook. Built a Jira AI Analyzer on the side that automates ticket pattern detection and cut manual investigation time by 30%. Also building toward the Junior AI Engineer role on the same team.</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-period">2024 — 2025</div>
+        <div>
+          <div class="exp-role">Senior Technical Support Engineer</div>
+          <div class="exp-company">Eon Health · Healthtech</div>
+          <div class="exp-desc">Second-level support for a cancer patient monitoring platform. Configured app settings in JSON and Node.js, monitored with ELK Stack, used AWS S3 and CloudFront. Built a Python Excel-to-JSON parser that cut manual data transformation time by 60%. 95% customer satisfaction.</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-period">2022 — 2024</div>
+        <div>
+          <div class="exp-role">Software Engineer — Product Support</div>
+          <div class="exp-company">i2c Inc · Fintech · Lahore</div>
+          <div class="exp-desc">Configured and launched client modules across API integrations — 3 major clients, zero critical errors at launch. Reduced issue resolution time by 30%, maintained 100% SLA compliance, left with a 95% customer satisfaction rate.</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-period">2018 — 2022</div>
+        <div>
+          <div class="exp-role">BSc Computer Science</div>
+          <div class="exp-company">University of Engineering &amp; Technology · Lahore</div>
+          <div class="exp-desc">Software Engineering. Admitted to MS in Artificial Intelligence at Northeastern University (Khoury College), Boston — Spring 2027.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-header reveal">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Get in touch</h2>
+    </div>
+
+    <p style="font-size:13px;color:var(--muted2);max-width:480px;margin-bottom:32px;line-height:1.7" class="reveal">
+      If you're building something in AI or Web3, want to collaborate, or are hiring for a role you think I'd care about — reach me at laibanasirdev@gmail.com. I'm based in Lahore and work with clients globally.
+    </p>
+
+    <div class="contact-block reveal">
+      <a class="contact-item" href="mailto:laibanasirdev@gmail.com">
+        <div class="contact-label">Email</div>
+        <div class="contact-value">laibanasirdev@gmail.com</div>
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/laibanasirdev" target="_blank">
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">laibanasirdev</div>
+      </a>
+      <a class="contact-item" href="https://github.com/laibanasirdev" target="_blank">
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">laibanasirdev</div>
+      </a>
+      <a class="contact-item" href="https://www.upwork.com/freelancers/laibanasir" target="_blank">
+        <div class="contact-label">Upwork</div>
+        <div class="contact-value">View profile</div>
+      </a>
+    </div>
+
+    <div style="margin-top:32px" class="reveal">
+      <a href="mailto:laibanasirdev@gmail.com" class="btn-primary">Let's Connect</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="reveal">
+    <div class="footer-copy">Lahore → Northeastern, one line of code at a time. · © 2026 Laiba Nasir</div>
+    <div class="footer-links">
+      <a href="https://github.com/laibanasirdev" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/laibanasirdev" target="_blank">LinkedIn</a>
+      <a href="https://www.upwork.com" target="_blank">Upwork</a>
+       <a href="https://medium.com/@laibanasirdev" target="_blank">Medium</a>
+
+    </div>
+  </footer>
+
+</div>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Stagger children
+document.querySelectorAll('.projects-grid .project-card, .services-list .service-row, .exp-list .exp-row').forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.06}s`;
+  el.classList.add('reveal');
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
