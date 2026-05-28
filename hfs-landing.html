@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>her future sale</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;1,6..12,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0D1128;
+  --navy-card:#161A3A;
+  --navy-mid:#1B2040;
+  --pink:#FF1E6B;
+  --pink-dim:rgba(255,30,107,0.12);
+  --blush:#F5E6ED;
+  --light-pink:#F0C6D8;
+  --white:#FFFFFF;
+  --muted:rgba(245,230,237,0.5);
+  --muted-dark:rgba(13,17,40,0.5);
+}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--navy);
+  color:var(--white);
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* CURSOR */
+#cur{
+  position:fixed;top:0;left:0;
+  width:10px;height:10px;
+  background:var(--pink);
+  border-radius:50%;
+  pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:width .18s,height .18s;
+}
+#cur.big{width:34px;height:34px;background:rgba(255,30,107,.2);border:1.5px solid var(--pink);}
+
+/* ─── NAV ─── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(13,17,40,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,30,107,.14);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 4rem;
+}
+.logo{font-family:'Oswald',sans-serif;font-weight:700;font-size:1.45rem;color:#fff;text-decoration:none;}
+.logo em{color:var(--pink);font-style:normal;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
+.nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:#fff;}
+.nav-apply{background:var(--pink)!important;color:#fff!important;padding:.5rem 1.4rem;font-weight:600!important;letter-spacing:.12em;}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:var(--navy);
+  overflow:hidden;
+  position:relative;
+}
+/* left panel */
+.hero-l{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:10rem 4rem 5rem;
+  position:relative;z-index:2;
+}
+.hero-kicker{
+  display:flex;align-items:center;gap:10px;
+  font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--pink);margin-bottom:1.75rem;
+  opacity:0;animation:up .7s .1s forwards;
+}
+.hero-kicker::before{content:'';width:26px;height:2px;background:var(--pink);}
+
+.hero-h1{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(4rem,7.5vw,7rem);
+  font-weight:700;line-height:.9;
+  text-transform:lowercase;letter-spacing:-.02em;
+  opacity:0;animation:up .7s .25s forwards;
+}
+.hero-h1 .pink{color:var(--pink);}
+.hero-h1 .ghost{
+  -webkit-text-stroke:1.5px rgba(255,255,255,.28);
+  color:transparent;
+}
+
+.hero-sub{
+  font-size:1rem;font-weight:300;
+  color:var(--muted);max-width:420px;
+  line-height:1.75;margin-top:2rem;
+  opacity:0;animation:up .7s .4s forwards;
+}
+
+.hero-btns{
+  display:flex;gap:.9rem;align-items:center;
+  margin-top:2.5rem;
+  opacity:0;animation:up .7s .55s forwards;
+}
+.btn-pink{
+  background:var(--pink);color:#fff;
+  padding:.9rem 2.2rem;
+  font-family:'Poppins',sans-serif;
+  font-weight:600;font-size:.8rem;
+  letter-spacing:.13em;text-transform:uppercase;
+  border:none;text-decoration:none;display:inline-block;
+  cursor:none;transition:opacity .2s,transform .18s;
+}
+.btn-pink:hover{opacity:.88;transform:translateY(-2px);}
+.btn-outline{
+  background:transparent;color:#fff;
+  border:1.5px solid rgba(255,255,255,.28);
+  padding:.9rem 2.2rem;
+  font-family:'Poppins',sans-serif;
+  font-weight:500;font-size:.8rem;
+  letter-spacing:.13em;text-transform:uppercase;
+  text-decoration:none;display:inline-block;
+  cursor:none;transition:border-color .2s,color .2s;
+}
+.btn-outline:hover{border-color:var(--pink);color:var(--pink);}
+
+/* stat pills under CTA */
+.hero-pills{
+  display:flex;gap:.75rem;flex-wrap:wrap;
+  margin-top:2.5rem;
+  opacity:0;animation:up .7s .7s forwards;
+}
+.pill{
+  background:var(--navy-card);
+  border:1px solid rgba(255,30,107,.2);
+  padding:.5rem 1rem;
+  display:flex;align-items:baseline;gap:.4rem;
+}
+.pill-n{font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:700;color:var(--pink);}
+.pill-l{font-size:.72rem;color:var(--muted);font-weight:400;}
+
+/* right panel — editorial graphic */
+.hero-r{
+  position:relative;background:var(--navy-card);
+  overflow:hidden;
+  opacity:0;animation:fadein .9s .3s forwards;
+}
+.hero-r-inner{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+  padding:3.5rem;
+}
+/* big BG word */
+.hero-bg-word{
+  position:absolute;
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(9rem,18vw,18rem);
+  font-weight:700;text-transform:lowercase;
+  color:rgba(255,30,107,.055);
+  line-height:1;letter-spacing:-.05em;
+  right:-1rem;top:50%;transform:translateY(-55%);
+  pointer-events:none;
+}
+/* decorative lines */
+.deco-lines{
+  position:absolute;top:3rem;left:3.5rem;
+  display:flex;flex-direction:column;gap:8px;
+}
+.deco-line{height:2px;background:var(--pink);}
+/* editorial text block */
+.ed-label{
+  font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--pink);margin-bottom:.75rem;
+}
+.ed-quote{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:700;text-transform:lowercase;
+  line-height:1.05;color:#fff;
+  max-width:380px;
+}
+.ed-quote em{color:var(--pink);font-style:normal;}
+/* stat card overlay */
+.hero-stat-card{
+  position:absolute;top:3.5rem;right:3.5rem;
+  background:var(--pink);
+  padding:1.5rem 1.75rem;min-width:160px;
+}
+.hsc-num{font-family:'Oswald',sans-serif;font-size:3.2rem;font-weight:700;color:#fff;line-height:1;}
+.hsc-sub{font-size:.72rem;color:rgba(255,255,255,.8);line-height:1.4;margin-top:4px;max-width:120px;}
+
+/* ─── MARQUEE ─── */
+.marquee{background:var(--pink);padding:.8rem 0;overflow:hidden;white-space:nowrap;}
+.marquee-track{display:inline-flex;animation:scroll 24s linear infinite;}
+.mi{
+  font-family:'Poppins',sans-serif;font-weight:600;
+  font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;
+  color:#fff;padding:0 2rem;
+  display:flex;align-items:center;gap:2rem;
+}
+.mi::after{content:'';width:4px;height:4px;background:rgba(255,255,255,.55);border-radius:50%;flex-shrink:0;}
+
+/* ─── SECTION HELPERS ─── */
+.sn{background:var(--navy);padding:7rem 4rem;}
+.sb{background:var(--blush);color:var(--navy);padding:7rem 4rem;}
+
+.s-tag{
+  font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--pink);margin-bottom:1.25rem;
+  display:flex;align-items:center;gap:10px;
+}
+.s-tag::before{content:'';width:22px;height:2px;background:var(--pink);}
+
+.s-h2{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(2.4rem,4vw,3.6rem);
+  font-weight:700;text-transform:lowercase;
+  line-height:1;letter-spacing:-.01em;
+}
+.s-h2 .pk{color:var(--pink);}
+.s-h2.dk{color:var(--navy);}
+
+/* ─── ABOUT ─── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem;}
+.about-body{font-size:.95rem;font-weight:300;color:var(--muted);line-height:1.8;}
+.about-body p+p{margin-top:1rem;}
+/* 4-up cards */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,30,107,.12);}
+.plr{background:var(--navy-card);padding:1.75rem 1.5rem;transition:background .25s;}
+.plr:hover{background:#1d2249;}
+.plr-n{font-size:.65rem;font-weight:600;letter-spacing:.18em;color:var(--pink);margin-bottom:.6rem;}
+.plr-t{font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:600;text-transform:lowercase;color:#fff;margin-bottom:.4rem;}
+.plr-d{font-size:.8rem;color:var(--muted);line-height:1.6;}
+
+/* ─── CHAPTER LIST ─── */
+.ch-list{margin-top:3.5rem;}
+.ch-row{
+  display:grid;grid-template-columns:100px 1fr 28px;
+  align-items:center;gap:2rem;
+  padding:1.7rem 0;
+  border-top:1px solid rgba(255,255,255,.07);
+  cursor:none;
+  transition:padding-left .22s;
+}
+.ch-row:last-child{border-bottom:1px solid rgba(255,255,255,.07);}
+.ch-row:hover{padding-left:12px;}
+.ch-num{font-size:.65rem;font-weight:600;letter-spacing:.18em;color:var(--pink);}
+.ch-name{font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:600;text-transform:lowercase;color:#fff;}
+.ch-desc{font-size:.8rem;color:var(--muted);margin-top:3px;}
+.ch-arr{color:var(--pink);font-size:1.1rem;opacity:0;transform:translateX(-6px);transition:opacity .2s,transform .2s;}
+.ch-row:hover .ch-arr{opacity:1;transform:translateX(0);}
+
+/* ─── BIG STAT BAND ─── */
+.stat-band{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:rgba(255,30,107,.12);
+  margin-top:5rem;
+}
+.sb-item{background:var(--navy-card);padding:2.5rem 2rem;text-align:center;}
+.sb-n{font-family:'Oswald',sans-serif;font-size:3rem;font-weight:700;color:var(--pink);}
+.sb-l{font-size:.78rem;color:var(--muted);margin-top:5px;}
+
+/* ─── FEATURES ─── */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+.fc{
+  background:var(--navy-card);
+  border:1px solid rgba(255,30,107,.15);
+  padding:2.2rem 1.75rem;
+  position:relative;overflow:hidden;
+  transition:border-color .25s,transform .25s;
+}
+.fc:hover{border-color:rgba(255,30,107,.5);transform:translateY(-4px);}
+.fc::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--pink);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s;
+}
+.fc:hover::before{transform:scaleX(1);}
+.fc-icon{
+  width:42px;height:42px;
+  background:var(--pink-dim);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.15rem;color:var(--pink);margin-bottom:1.25rem;
+}
+.fc-t{font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:600;text-transform:lowercase;margin-bottom:.55rem;}
+.fc-d{font-size:.8rem;font-weight:300;color:var(--muted);line-height:1.65;}
+.fc-tag{
+  display:inline-block;margin-top:1.1rem;
+  padding:3px 9px;font-size:.65rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  background:var(--pink-dim);color:var(--pink);
+  border:1px solid rgba(255,30,107,.2);
+}
+
+/* ─── PORTAL MOCK ─── */
+.portal{
+  background:var(--navy-mid);
+  border:1px solid rgba(255,30,107,.2);
+  padding:1.75rem;margin-top:3rem;
+}
+.p-head{
+  display:flex;align-items:center;gap:12px;
+  padding-bottom:1.2rem;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  margin-bottom:1.4rem;
+}
+.p-av{
+  width:38px;height:38px;
+  background:var(--pink);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:700;font-size:.85rem;
+}
+.p-name{font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:600;text-transform:lowercase;}
+.p-role{font-size:.72rem;color:var(--muted);}
+.p-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;}
+.ps{text-align:center;}
+.ps-n{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:var(--pink);}
+.ps-l{font-size:.68rem;color:var(--muted);margin-top:2px;}
+.p-prog{margin-top:1.3rem;}
+.pp-top{display:flex;justify-content:space-between;font-size:.76rem;margin-bottom:6px;}
+.pp-val{color:var(--pink);font-weight:600;}
+.pp-bar{width:100%;height:3px;background:rgba(255,255,255,.1);}
+.pp-fill{height:100%;background:var(--pink);width:68%;}
+
+/* ─── AI TEASER ─── */
+.ai-teaser{
+  background:var(--navy-card);
+  border:1px solid rgba(255,30,107,.2);
+  padding:2rem 2.25rem;
+  display:flex;align-items:center;gap:2rem;
+  margin-top:1.5rem;
+}
+.ai-dot{
+  width:44px;height:44px;flex-shrink:0;
+  background:var(--pink-dim);
+  border:1.5px solid rgba(255,30,107,.3);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;color:var(--pink);
+}
+.ai-t{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;text-transform:lowercase;margin-bottom:3px;}
+.ai-d{font-size:.8rem;color:var(--muted);line-height:1.55;}
+.ai-badge{
+  margin-left:auto;flex-shrink:0;
+  background:var(--pink);color:#fff;
+  padding:.4rem .9rem;
+  font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+}
+
+/* ─── APPLY ─── */
+.apply{
+  background:var(--pink);
+  padding:8rem 4rem;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+}
+.apply-h{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(3.2rem,6vw,5.5rem);
+  font-weight:700;text-transform:lowercase;
+  line-height:.9;letter-spacing:-.02em;color:#fff;
+}
+.apply-h .ghost-w{-webkit-text-stroke:2px rgba(255,255,255,.45);color:transparent;display:block;}
+.apply-body{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.85);line-height:1.75;margin-bottom:2.25rem;}
+.btn-white{
+  background:#fff;color:var(--pink);
+  padding:.9rem 2.2rem;
+  font-family:'Poppins',sans-serif;
+  font-weight:700;font-size:.8rem;
+  letter-spacing:.13em;text-transform:uppercase;
+  text-decoration:none;display:inline-block;
+  cursor:none;transition:transform .18s;
+}
+.btn-white:hover{transform:translateY(-2px);}
+.btn-outline-w{
+  background:transparent;color:#fff;
+  border:1.5px solid rgba(255,255,255,.45);
+  padding:.9rem 2.2rem;
+  font-family:'Poppins',sans-serif;
+  font-weight:500;font-size:.8rem;
+  letter-spacing:.13em;text-transform:uppercase;
+  text-decoration:none;display:inline-block;
+  cursor:none;margin-left:.8rem;
+  transition:border-color .2s,background .2s;
+}
+.btn-outline-w:hover{border-color:#fff;background:rgba(255,255,255,.1);}
+
+/* ─── FOOTER ─── */
+footer{background:#080c1e;padding:4rem 4rem 2.5rem;}
+.ft{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:2rem;}
+.ft-logo{font-family:'Oswald',sans-serif;font-weight:700;font-size:1.4rem;color:#fff;text-decoration:none;}
+.ft-logo em{color:var(--pink);font-style:normal;}
+.ft-tag{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:5px;}
+.ft-nav{display:flex;gap:3.5rem;}
+.ft-col h4{font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin-bottom:.9rem;}
+.ft-col a{display:block;font-size:.8rem;font-weight:300;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;transition:color .2s;}
+.ft-col a:hover{color:#fff;}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;}
+.ft-copy{font-size:.72rem;color:rgba(255,255,255,.22);}
+
+/* ─── SCROLL REVEAL ─── */
+.r{opacity:0;transform:translateY(34px);transition:opacity .75s,transform .75s;}
+.r.in{opacity:1;transform:translateY(0);}
+
+/* ─── KEYFRAMES ─── */
+@keyframes up{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadein{from{opacity:0;}to{opacity:1;}}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px){
+  .nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .hero{grid-template-columns:1fr;}
+  .hero-r{display:none;}
+  .hero-l{padding:9rem 1.5rem 5rem;}
+  .sn,.sb{padding:5rem 1.5rem;}
+  .about-grid,.apply{grid-template-columns:1fr;gap:3rem;}
+  .feat-grid{grid-template-columns:1fr 1fr;}
+  .stat-band{grid-template-columns:1fr;}
+  footer{padding:3rem 1.5rem 2rem;}
+  .ft{flex-direction:column;gap:2.5rem;}
+  .apply{padding:5rem 1.5rem;}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+
+<!-- ─── NAV ─── -->
+<nav class="nav">
+  <a class="logo" href="#">her future <em>sale</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#chapters">chapters</a></li>
+    <li><a href="#platform">platform</a></li>
+    <li><a href="#apply" class="nav-apply">apply now</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+
+  <!-- LEFT -->
+  <div class="hero-l">
+    <div class="hero-kicker">empowering the next generation</div>
+    <h1 class="hero-h1">
+      sell<br>
+      yourself<br>
+      <span class="pink">first.</span><br>
+      <span class="ghost">lead bold.</span>
+    </h1>
+    <p class="hero-sub">her future sale is where Gen Z women break into sales, sharpen their edge, and build careers that actually excite them — unapologetically.</p>
+    <div class="hero-btns">
+      <a href="#apply" class="btn-pink">apply now</a>
+      <a href="#about" class="btn-outline">learn more</a>
+    </div>
+    <div class="hero-pills">
+      <div class="pill"><span class="pill-n">500+</span><span class="pill-l">members</span></div>
+      <div class="pill"><span class="pill-n">30+</span><span class="pill-l">chapters</span></div>
+      <div class="pill"><span class="pill-n">92%</span><span class="pill-l">placed in 3 mo.</span></div>
+    </div>
+  </div>
+
+  <!-- RIGHT editorial panel -->
+  <div class="hero-r">
+    <div class="hero-bg-word" aria-hidden="true">hfs</div>
+    <div class="deco-lines" aria-hidden="true">
+      <div class="deco-line" style="width:60px;"></div>
+      <div class="deco-line" style="width:36px;opacity:.4;"></div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="hsc-num">76%</div>
+      <div class="hsc-sub">of buyers trust reps who lead with confidence</div>
+    </div>
+    <div class="hero-r-inner">
+      <div class="ed-label">editorial / clean</div>
+      <div class="ed-quote">she walks in<br>owning <em>it.</em></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ─── MARQUEE ─── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="mi">sell yourself first</span>
+    <span class="mi">confidence</span>
+    <span class="mi">unapologetic</span>
+    <span class="mi">women who close</span>
+    <span class="mi">driven</span>
+    <span class="mi">community</span>
+    <span class="mi">bold</span>
+    <span class="mi">empowered</span>
+    <span class="mi">sell yourself first</span>
+    <span class="mi">confidence</span>
+    <span class="mi">unapologetic</span>
+    <span class="mi">women who close</span>
+    <span class="mi">driven</span>
+    <span class="mi">community</span>
+    <span class="mi">bold</span>
+    <span class="mi">empowered</span>
+  </div>
+</div>
+
+<!-- ─── ABOUT ─── -->
+<section class="sn" id="about">
+  <div class="s-tag r">our mission</div>
+  <h2 class="s-h2 r">built for women<br>who <span class="pk">don't wait.</span></h2>
+  <div class="about-grid">
+    <div class="about-body r">
+      <p>her future sale isn't another career program. it's a movement for college-aged women who want to own the room, close the deal, and lead on their own terms.</p>
+      <p>we believe sales is the most transferable skill in the world — and we're done waiting for women to be handed opportunities.</p>
+      <p>through chapters, curriculum, and community, hfs gives you the tools to sell yourself first — and everything else after that.</p>
+    </div>
+    <div class="pillars r" style="transition-delay:.12s">
+      <div class="plr">
+        <div class="plr-n">01</div>
+        <div class="plr-t">learn sales</div>
+        <div class="plr-d">Real frameworks from women actually in the field — not a textbook.</div>
+      </div>
+      <div class="plr">
+        <div class="plr-n">02</div>
+        <div class="plr-t">build confidence</div>
+        <div class="plr-d">Every cold call, pitch, and objection — handled on your terms.</div>
+      </div>
+      <div class="plr">
+        <div class="plr-n">03</div>
+        <div class="plr-t">own the room</div>
+        <div class="plr-d">Interview prep and communication that actually gets you hired.</div>
+      </div>
+      <div class="plr">
+        <div class="plr-n">04</div>
+        <div class="plr-t">lead boldly</div>
+        <div class="plr-d">Join a chapter. Build your network. Become the one who opens doors.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CHAPTERS — blush ─── -->
+<section class="sb" id="chapters">
+  <div class="s-tag r">the chapter model</div>
+  <h2 class="s-h2 dk r">five pages.<br>one <span class="pk">bold</span> platform.</h2>
+  <div class="ch-list">
+    <div class="ch-row r">
+      <div class="ch-num">01 — home</div>
+      <div><div class="ch-name" style="color:var(--navy)">your story starts here</div><div class="ch-desc" style="color:var(--muted-dark)">Bold, scroll-stopping, built for an audience that doesn't wait for permission.</div></div>
+      <div class="ch-arr" style="color:var(--pink)">→</div>
+    </div>
+    <div class="ch-row r" style="border-top-color:rgba(13,17,40,.1)">
+      <div class="ch-num">02 — about</div>
+      <div><div class="ch-name" style="color:var(--navy)">the mission + the women</div><div class="ch-desc" style="color:var(--muted-dark)">Meet the founders, advisors, and the community driving HFS forward.</div></div>
+      <div class="ch-arr" style="color:var(--pink)">→</div>
+    </div>
+    <div class="ch-row r" style="border-top-color:rgba(13,17,40,.1)">
+      <div class="ch-num">03 — chapter model</div>
+      <div><div class="ch-name" style="color:var(--navy)">find or start your chapter</div><div class="ch-desc" style="color:var(--muted-dark)">Join an existing chapter or launch your own on campus or in your city.</div></div>
+      <div class="ch-arr" style="color:var(--pink)">→</div>
+    </div>
+    <div class="ch-row r" style="border-top-color:rgba(13,17,40,.1)">
+      <div class="ch-num">04 — apply</div>
+      <div><div class="ch-name" style="color:var(--navy)">your application awaits</div><div class="ch-desc" style="color:var(--muted-dark)">Tell us your story. Show us your drive. The rest is history.</div></div>
+      <div class="ch-arr" style="color:var(--pink)">→</div>
+    </div>
+    <div class="ch-row r" style="border-top-color:rgba(13,17,40,.1);border-bottom-color:rgba(13,17,40,.1)">
+      <div class="ch-num">05 — contact</div>
+      <div><div class="ch-name" style="color:var(--navy)">let's talk</div><div class="ch-desc" style="color:var(--muted-dark)">Questions, partnerships, media inquiries — we're always listening.</div></div>
+      <div class="ch-arr" style="color:var(--pink)">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PLATFORM — navy ─── -->
+<section class="sn" id="platform">
+  <div class="s-tag r">the platform</div>
+  <h2 class="s-h2 r">everything you need<br>to <span class="pk">level up.</span></h2>
+
+  <div class="feat-grid">
+    <div class="fc r">
+      <div class="fc-icon">◎</div>
+      <div class="fc-t">member dashboard</div>
+      <div class="fc-d">A personal command center to track your progress, learning streaks, and milestones all in one place.</div>
+      <span class="fc-tag">Login Portal</span>
+    </div>
+    <div class="fc r" style="transition-delay:.08s">
+      <div class="fc-icon">▶</div>
+      <div class="fc-t">interactive learning</div>
+      <div class="fc-d">Modules on interview skills, communication frameworks, and sales techniques — built for real-world use.</div>
+      <span class="fc-tag">Live Curriculum</span>
+    </div>
+    <div class="fc r" style="transition-delay:.16s">
+      <div class="fc-icon">⬡</div>
+      <div class="fc-t">ai cold call coach</div>
+      <div class="fc-d">Practice cold calls with an AI that throws real objections, scores your delivery, and gives honest feedback.</div>
+      <span class="fc-tag">Coming Soon</span>
+    </div>
+    <div class="fc r" style="transition-delay:.24s">
+      <div class="fc-icon">◈</div>
+      <div class="fc-t">chapter network</div>
+      <div class="fc-d">Connect with HFS members across the country through your local chapter and a national digital community.</div>
+      <span class="fc-tag">Community</span>
+    </div>
+    <div class="fc r" style="transition-delay:.32s">
+      <div class="fc-icon">◷</div>
+      <div class="fc-t">progress tracking</div>
+      <div class="fc-d">See exactly where you stand — completions, skill badges, and mentor feedback all tracked over time.</div>
+      <span class="fc-tag">Dashboard</span>
+    </div>
+    <div class="fc r" style="transition-delay:.4s">
+      <div class="fc-icon">◉</div>
+      <div class="fc-t">mentor access</div>
+      <div class="fc-d">Get connected to HFS alumnae and advisors in top sales roles who can guide your next move.</div>
+      <span class="fc-tag">Network</span>
+    </div>
+  </div>
+
+  <!-- MEMBER PORTAL PREVIEW -->
+  <div class="r" style="margin-top:4rem;transition-delay:.1s">
+    <div class="s-tag">member portal preview</div>
+    <div class="portal">
+      <div class="p-head">
+        <div class="p-av">JL</div>
+        <div>
+          <div class="p-name">jessica liu</div>
+          <div class="p-role">HFS Member · Boston Chapter</div>
+        </div>
+      </div>
+      <div class="p-stats">
+        <div class="ps"><div class="ps-n">12</div><div class="ps-l">modules done</div></div>
+        <div class="ps"><div class="ps-n">7</div><div class="ps-l">calls logged</div></div>
+        <div class="ps"><div class="ps-n">3</div><div class="ps-l">badges earned</div></div>
+      </div>
+      <div class="p-prog">
+        <div class="pp-top"><span style="color:var(--muted)">interview skills track</span><span class="pp-val">68%</span></div>
+        <div class="pp-bar"><div class="pp-fill"></div></div>
+      </div>
+    </div>
+    <!-- AI teaser -->
+    <div class="ai-teaser">
+      <div class="ai-dot">✦</div>
+      <div>
+        <div class="ai-t">ai cold call practice — coming soon</div>
+        <div class="ai-d">practice live objections with an AI coach that scores your confidence, pacing, and close rate in real time.</div>
+      </div>
+      <div class="ai-badge">in development</div>
+    </div>
+  </div>
+
+  <div class="stat-band r" style="margin-top:5rem">
+    <div class="sb-item"><div class="sb-n">76%</div><div class="sb-l">of buyers trust reps who lead with confidence</div></div>
+    <div class="sb-item"><div class="sb-n">92%</div><div class="sb-l">of members land roles within 3 months</div></div>
+    <div class="sb-item"><div class="sb-n">500+</div><div class="sb-l">members across 30+ chapters nationwide</div></div>
+  </div>
+</section>
+
+<!-- ─── APPLY CTA ─── -->
+<section class="apply" id="apply">
+  <div>
+    <h2 class="apply-h">
+      ready<br>to<br><span class="ghost-w">close?</span>
+    </h2>
+  </div>
+  <div>
+    <p class="apply-body">applications are open. we're looking for ambitious women who are ready to learn, lead, and build the career they deserve. this is your moment — don't let it pass.</p>
+    <a href="#" class="btn-white">apply now</a>
+    <a href="#about" class="btn-outline-w">learn more</a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="ft">
+    <div>
+      <a class="ft-logo" href="#">her future <em>sale</em></a>
+      <div class="ft-tag">empowering the next generation</div>
+    </div>
+    <div class="ft-nav">
+      <div class="ft-col">
+        <h4>explore</h4>
+        <a href="#">home</a>
+        <a href="#">about</a>
+        <a href="#">chapter model</a>
+      </div>
+      <div class="ft-col">
+        <h4>platform</h4>
+        <a href="#">member login</a>
+        <a href="#">curriculum</a>
+        <a href="#">ai coach</a>
+      </div>
+      <div class="ft-col">
+        <h4>connect</h4>
+        <a href="#">apply</a>
+        <a href="#">contact</a>
+        <a href="#">instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <div class="ft-copy">© 2025 her future sale. all rights reserved.</div>
+    <div class="ft-copy">herfuturesale.com</div>
+  </div>
+</footer>
+
+<script>
+// cursor
+const cur=document.getElementById('cur');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';});
+document.querySelectorAll('a,button,.ch-row,.plr,.fc,.pill').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur.classList.add('big'));
+  el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
+});
+// scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.1});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
