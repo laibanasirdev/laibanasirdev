@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Aurore — Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --cream:#FAF7F2;
+  --cream2:#F2EDE4;
+  --ink:#1A1410;
+  --gold:#B8924A;
+  --gold2:#D4AF6E;
+  --rust:#8B3A2A;
+  --sage:#4A5E4A;
+  --warm-gray:#8A8078;
+}
+
+@media print {
+  body{background:#fff;}
+  .page{page-break-after:always;box-shadow:none!important;}
+  .no-print{display:none!important;}
+}
+
+body{
+  background:#E8E2D9;
+  font-family:'Jost',sans-serif;
+  color:var(--ink);
+  min-height:100vh;
+  padding:2rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2rem;
+}
+
+.controls{
+  display:flex;
+  gap:1rem;
+  margin-bottom:0;
+}
+.controls button{
+  background:var(--ink);
+  color:var(--cream);
+  border:none;
+  padding:10px 24px;
+  font-family:'Jost',sans-serif;
+  font-size:13px;
+  font-weight:400;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:opacity 0.2s;
+}
+.controls button:hover{opacity:0.75;}
+
+/* PAGE */
+.page{
+  width:595px;
+  min-height:842px;
+  background:var(--cream);
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.2);
+}
+
+/* PAGE 1 — COVER */
+.cover{
+  display:flex;
+  flex-direction:column;
+  height:842px;
+}
+
+/* Top decorative band */
+.cover-band{
+  height:8px;
+  background:linear-gradient(90deg,var(--rust),var(--gold),var(--rust));
+}
+
+/* Cover hero area */
+.cover-hero{
+  flex:1;
+  background:var(--ink);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  padding:3rem 2.5rem;
+}
+
+/* Geometric background pattern */
+.cover-hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(184,146,74,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139,58,42,0.08) 0%, transparent 50%);
+}
+
+.cover-ornament-top{
+  width:140px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin-bottom:1.5rem;
+  position:relative;
+}
+.cover-ornament-top::before{
+  content:'◆';
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  color:var(--gold);
+  font-size:10px;
+  background:var(--ink);
+  padding:0 6px;
+}
+
+.cover-tagline-top{
+  font-family:'Jost',sans-serif;
+  font-weight:200;
+  font-size:10px;
+  letter-spacing:6px;
+  text-transform:uppercase;
+  color:var(--gold2);
+  margin-bottom:1.75rem;
+}
+
+.cover-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:72px;
+  font-weight:300;
+  color:var(--cream);
+  line-height:0.9;
+  text-align:center;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:0.5rem;
+  position:relative;
+  z-index:1;
+}
+
+.cover-subtitle{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  font-weight:300;
+  font-style:italic;
+  color:var(--gold2);
+  letter-spacing:2px;
+  margin-bottom:1.75rem;
+}
+
+.cover-ornament-bottom{
+  width:140px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin-bottom:2rem;
+  position:relative;
+}
+.cover-ornament-bottom::before{
+  content:'◆';
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  color:var(--gold);
+  font-size:10px;
+  background:var(--ink);
+  padding:0 6px;
+}
+
+.cover-desc{
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  font-size:11px;
+  letter-spacing:2px;
+  color:rgba(250,247,242,0.45);
+  text-transform:uppercase;
+  text-align:center;
+  max-width:320px;
+  line-height:2;
+}
+
+/* Cover bottom cream section */
+.cover-bottom{
+  background:var(--cream);
+  padding:2rem 2.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:2px solid var(--gold);
+}
+.cover-info{
+  font-size:10px;
+  font-weight:300;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--warm-gray);
+  line-height:2;
+}
+.cover-season{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  font-style:italic;
+  color:var(--rust);
+  font-weight:400;
+}
+
+/* ── PAGE 2 — MENU CONTENT ── */
+.menu-page{
+  min-height:842px;
+  display:flex;
+  flex-direction:column;
+}
+
+.menu-header{
+  background:var(--ink);
+  padding:1.25rem 2.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:2px solid var(--gold);
+}
+.menu-header-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  font-weight:300;
+  color:var(--cream);
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+.menu-header-right{
+  font-size:9px;
+  font-weight:300;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold2);
+}
+
+.menu-body{
+  flex:1;
+  padding:2rem 2.5rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0 2.5rem;
+}
+
+/* Section */
+.menu-section{
+  margin-bottom:2rem;
+}
+.menu-section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--rust);
+  padding-bottom:8px;
+  border-bottom:1px solid var(--gold2);
+  margin-bottom:1rem;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.menu-section-title::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg,var(--gold2),transparent);
+}
+
+/* Menu item */
+.menu-item{
+  margin-bottom:1rem;
+  padding-bottom:1rem;
+  border-bottom:1px solid rgba(26,20,16,0.06);
+}
+.menu-item:last-child{
+  border-bottom:none;
+  margin-bottom:0;
+  padding-bottom:0;
+}
+.item-top{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:3px;
+}
+.item-dots{
+  flex:1;
+  border-bottom:1px dotted rgba(138,128,120,0.4);
+  margin-bottom:3px;
+}
+.item-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;
+  font-weight:500;
+  color:var(--ink);
+  line-height:1.2;
+  white-space:nowrap;
+}
+.item-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;
+  font-weight:500;
+  color:var(--gold);
+  white-space:nowrap;
+}
+.item-desc{
+  font-size:10px;
+  font-weight:300;
+  color:var(--warm-gray);
+  line-height:1.7;
+  letter-spacing:0.3px;
+  font-style:italic;
+}
+.item-tags{
+  display:flex;
+  gap:4px;
+  margin-top:4px;
+}
+.tag{
+  font-size:8px;
+  font-weight:400;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding:1px 6px;
+  border-radius:1px;
+}
+.tag-v{background:#E8F0E8;color:var(--sage);}
+.tag-s{background:#FEF0E8;color:var(--rust);}
+.tag-gf{background:#F0EAE0;color:var(--warm-gray);}
+.tag-new{background:var(--ink);color:var(--gold2);}
+
+/* Footer */
+.menu-footer{
+  background:var(--cream2);
+  padding:1rem 2.5rem;
+  border-top:1px solid var(--gold2);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.footer-note{
+  font-size:9px;
+  font-weight:300;
+  letter-spacing:1.5px;
+  color:var(--warm-gray);
+  text-transform:uppercase;
+  line-height:1.8;
+}
+.footer-legend{
+  display:flex;
+  gap:10px;
+}
+.legend-item{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  font-size:8px;
+  font-weight:300;
+  color:var(--warm-gray);
+  letter-spacing:1px;
+}
+
+/* ── PAGE 3 — DRINKS & DESSERTS ── */
+.full-section{
+  grid-column:1/-1;
+}
+
+/* Divider */
+.col-divider{
+  grid-column:1/-1;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold2),transparent);
+  margin:0 0 1.5rem;
+}
+</style>
+</head>
+<body>
+
+<div class="controls no-print">
+  <button onclick="window.print()">🖨 Print / Save as PDF</button>
+</div>
+
+<!-- PAGE 1: COVER -->
+<div class="page cover">
+  <div class="cover-band"></div>
+  <div class="cover-hero">
+    <div class="cover-ornament-top"></div>
+    <div class="cover-tagline-top">Est. 2018 &nbsp;·&nbsp; Fine Dining</div>
+    <div class="cover-title">Maison<br>Aurore</div>
+    <div class="cover-subtitle">Restaurant & Wine Bar</div>
+    <div class="cover-ornament-bottom"></div>
+    <div class="cover-desc">Contemporary French cuisine crafted<br>with locally sourced seasonal ingredients</div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-info">
+      Open Tuesday – Sunday<br>
+      Dinner: 6:00 pm – 10:30 pm<br>
+      Reservations recommended
+    </div>
+    <div class="cover-season">Summer<br>2026</div>
+    <div class="cover-info" style="text-align:right;">
+      14 Rue de la Paix<br>
+      +1 (555) 000-1234<br>
+      maisonaurore.com
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: STARTERS & MAINS -->
+<div class="page menu-page">
+  <div class="menu-header">
+    <div class="menu-header-title">À La Carte</div>
+    <div class="menu-header-right">Summer Menu 2026</div>
+  </div>
+
+  <div class="menu-body">
+
+    <!-- LEFT COL -->
+    <div>
+      <div class="menu-section">
+        <div class="menu-section-title">Entrées</div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Soupe à l'Oignon</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$14</span>
+          </div>
+          <div class="item-desc">Classic French onion soup, Gruyère croûton, aged Comté</div>
+          <div class="item-tags"><span class="tag tag-v">V</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Foie Gras Torchon</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$28</span>
+          </div>
+          <div class="item-desc">Duck foie gras, brioche toast, fig compote, Sauternes gelée</div>
+          <div class="item-tags"><span class="tag tag-new">New</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Tartare de Saumon</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$22</span>
+          </div>
+          <div class="item-desc">Scottish salmon, avocado, crème fraîche, micro herbs, lemon oil</div>
+          <div class="item-tags"><span class="tag tag-gf">GF</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Velouté d'Asperge</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$16</span>
+          </div>
+          <div class="item-desc">White asparagus velouté, truffle foam, hazelnut crumble</div>
+          <div class="item-tags"><span class="tag tag-v">V</span><span class="tag tag-gf">GF</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Escargots de Bourgogne</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$19</span>
+          </div>
+          <div class="item-desc">Six Burgundy snails, garlic-herb butter, toasted sourdough</div>
+        </div>
+      </div>
+
+      <div class="menu-section">
+        <div class="menu-section-title">Salades</div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Salade Niçoise</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$21</span>
+          </div>
+          <div class="item-desc">Seared tuna, haricots verts, quail egg, olives, anchovy vinaigrette</div>
+          <div class="item-tags"><span class="tag tag-gf">GF</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Salade de Chèvre Chaud</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$18</span>
+          </div>
+          <div class="item-desc">Warm goat cheese crostini, frisée, candied walnuts, honey-mustard</div>
+          <div class="item-tags"><span class="tag tag-v">V</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COL -->
+    <div>
+      <div class="menu-section">
+        <div class="menu-section-title">Plats Principaux</div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Canard à l'Orange</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$48</span>
+          </div>
+          <div class="item-desc">Slow-roasted duck breast, bitter orange sauce, wilted endive, pommes sarladaises</div>
+          <div class="item-tags"><span class="tag tag-gf">GF</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Sole Meunière</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$52</span>
+          </div>
+          <div class="item-desc">Dover sole, brown butter, capers, lemon, steamed new potatoes</div>
+          <div class="item-tags"><span class="tag tag-gf">GF</span><span class="tag tag-new">Chef's Pick</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Côte de Bœuf</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$68</span>
+          </div>
+          <div class="item-desc">600g dry-aged rib-eye, béarnaise, pommes frites, watercress (for two)</div>
+          <div class="item-tags"><span class="tag tag-gf">GF</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Risotto aux Champignons</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$36</span>
+          </div>
+          <div class="item-desc">Wild mushroom risotto, Parmesan, black truffle shavings, chervil</div>
+          <div class="item-tags"><span class="tag tag-v">V</span><span class="tag tag-gf">GF</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Agneau de Lait Rôti</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$54</span>
+          </div>
+          <div class="item-desc">Milk-fed lamb rack, herbed crust, ratatouille provençale, jus d'agneau</div>
+          <div class="item-tags"><span class="tag tag-s">Seasonal</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Bouillabaisse</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$58</span>
+          </div>
+          <div class="item-desc">Marseille-style seafood stew, saffron broth, rouille, toasted baguette</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="menu-footer">
+    <div class="footer-note">
+      Please inform your server of any allergies or dietary requirements<br>
+      A discretionary 12.5% service charge will be added to your bill
+    </div>
+    <div class="footer-legend">
+      <div class="legend-item"><span class="tag tag-v" style="padding:2px 5px;">V</span> Vegetarian</div>
+      <div class="legend-item"><span class="tag tag-gf" style="padding:2px 5px;">GF</span> Gluten Free</div>
+      <div class="legend-item"><span class="tag tag-s" style="padding:2px 5px;">S</span> Seasonal</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3: DESSERTS & DRINKS -->
+<div class="page menu-page">
+  <div class="menu-header">
+    <div class="menu-header-title">Desserts & Boissons</div>
+    <div class="menu-header-right">Summer Menu 2026</div>
+  </div>
+
+  <div class="menu-body">
+
+    <!-- DESSERTS LEFT -->
+    <div>
+      <div class="menu-section">
+        <div class="menu-section-title">Desserts</div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Crème Brûlée</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$14</span>
+          </div>
+          <div class="item-desc">Classic vanilla custard, caramelised sugar crust, seasonal berries</div>
+          <div class="item-tags"><span class="tag tag-v">V</span><span class="tag tag-gf">GF</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Tarte Tatin</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$16</span>
+          </div>
+          <div class="item-desc">Caramelised apple upside-down tart, crème fraîche, calvados reduction</div>
+          <div class="item-tags"><span class="tag tag-v">V</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Soufflé au Chocolat</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$18</span>
+          </div>
+          <div class="item-desc">Valrhona dark chocolate soufflé, vanilla bean ice cream (allow 15 min)</div>
+          <div class="item-tags"><span class="tag tag-v">V</span><span class="tag tag-new">Signature</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Île Flottante</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$13</span>
+          </div>
+          <div class="item-desc">Floating island meringue, crème anglaise, praline, caramel threads</div>
+          <div class="item-tags"><span class="tag tag-v">V</span><span class="tag tag-gf">GF</span></div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Plateau de Fromages</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$24</span>
+          </div>
+          <div class="item-desc">Selection of five French cheeses, quince paste, walnuts, sourdough crackers</div>
+          <div class="item-tags"><span class="tag tag-v">V</span><span class="tag tag-gf">GF</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRINKS RIGHT -->
+    <div>
+      <div class="menu-section">
+        <div class="menu-section-title">Vins au Verre</div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Chablis Premier Cru</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$22</span>
+          </div>
+          <div class="item-desc">Domaine Droin, Burgundy 2022 — crisp, mineral, citrus notes</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Sancerre Blanc</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$18</span>
+          </div>
+          <div class="item-desc">Henri Bourgeois, Loire Valley 2023 — floral, sauvignon blanc</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Pomerol Rouge</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$26</span>
+          </div>
+          <div class="item-desc">Château Beauregard, Bordeaux 2019 — rich, plum, smooth tannins</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Champagne Brut</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$24</span>
+          </div>
+          <div class="item-desc">Billecart-Salmon NV — fine bubbles, brioche, green apple</div>
+          <div class="item-tags"><span class="tag tag-new">House</span></div>
+        </div>
+      </div>
+
+      <div class="menu-section">
+        <div class="menu-section-title">Cocktails de Maison</div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Aurore Spritz</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$16</span>
+          </div>
+          <div class="item-desc">Aperol, elderflower, Prosecco, blood orange, rosemary sprig</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">Lavender Sour</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$17</span>
+          </div>
+          <div class="item-desc">Gin, lavender syrup, lemon, egg white, Champagne float</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top">
+            <span class="item-name">French 75</span>
+            <span class="item-dots"></span>
+            <span class="item-price">$18</span>
+          </div>
+          <div class="item-desc">Cognac, lemon, simple syrup, Champagne — the classic</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FULL WIDTH: SET MENUS -->
+    <div class="col-divider"></div>
+    <div style="grid-column:1/-1;">
+      <div class="menu-section">
+        <div class="menu-section-title">Menus Dégustation</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+          <div style="background:var(--cream2);padding:1.25rem;border-top:2px solid var(--rust);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;margin-bottom:4px;">Menu Classique</div>
+            <div style="font-size:10px;color:var(--warm-gray);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">3 Courses</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--gold);">$65</div>
+            <div style="font-size:9px;color:var(--warm-gray);margin-top:6px;line-height:1.8;">Entrée · Plat · Dessert<br>Coffee & mignardises</div>
+          </div>
+          <div style="background:var(--ink);padding:1.25rem;border-top:2px solid var(--gold);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:var(--cream);margin-bottom:4px;">Menu Prestige</div>
+            <div style="font-size:10px;color:var(--gold2);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">5 Courses</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--gold);">$95</div>
+            <div style="font-size:9px;color:rgba(250,247,242,0.5);margin-top:6px;line-height:1.8;">Chef's selection<br>Wine pairing +$45</div>
+          </div>
+          <div style="background:var(--cream2);padding:1.25rem;border-top:2px solid var(--sage);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;margin-bottom:4px;">Menu Végétal</div>
+            <div style="font-size:10px;color:var(--warm-gray);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">4 Courses · Vegetarian</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--gold);">$72</div>
+            <div style="font-size:9px;color:var(--warm-gray);margin-top:6px;line-height:1.8;">Seasonal vegetables<br>Wine pairing +$35</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="menu-footer">
+    <div class="footer-note">
+      All prices include applicable taxes &nbsp;·&nbsp; Consuming raw or undercooked meats may increase risk of foodborne illness<br>
+      We source our produce from local farms within 100 miles where possible
+    </div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:var(--rust);">
+      Bon appétit
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
