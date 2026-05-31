@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vantage Financial Group — Private Advisory for High-Net-Worth Clients</title>
+<meta name="description" content="Full-service accounting, fractional CFO, asset protection and tax strategy for high-net-worth individuals. Offshore-hosted. Jurisdictionally private.">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0B1F3A;
+  --navy2:#132D52;
+  --navy3:#1A3A6B;
+  --green:#1B4332;
+  --green2:#2D6A4F;
+  --green3:#40916C;
+  --platinum:#E8E4DC;
+  --platinum2:#F4F1EB;
+  --white:#FAFAF8;
+  --ink:#0D0D0D;
+  --ink2:#1A1A1A;
+  --gray:#6B7280;
+  --gray2:#9CA3AF;
+  --gray3:#E5E1D8;
+  --border:#DDD9D0;
+  --red:#991B1B;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'IBM Plex Sans',sans-serif;
+  background:var(--white);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+/* ── TOP BAR ── */
+.topbar{
+  background:var(--navy);
+  padding:8px 0;
+  border-bottom:1px solid var(--navy2);
+}
+.topbar-inner{
+  max-width:1400px;margin:0 auto;
+  padding:0 3rem;
+  display:flex;align-items:center;
+  justify-content:space-between;
+}
+.topbar-left{
+  display:flex;align-items:center;gap:2rem;
+}
+.topbar-item{
+  display:flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:300;
+  color:rgba(232,228,220,0.6);
+  letter-spacing:0.5px;
+}
+.topbar-item strong{color:var(--platinum);font-weight:400;}
+.topbar-right{
+  display:flex;align-items:center;gap:1rem;
+}
+.topbar-link{
+  font-size:10px;font-weight:400;
+  letter-spacing:2px;text-transform:uppercase;
+  color:rgba(232,228,220,0.5);
+  text-decoration:none;transition:color 0.2s;
+}
+.topbar-link:hover{color:var(--platinum);}
+.topbar-divider{width:1px;height:12px;background:rgba(255,255,255,0.1);}
+
+/* ── NAV ── */
+nav{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 1px 0 rgba(0,0,0,0.04);
+}
+.nav-inner{
+  max-width:1400px;margin:0 auto;
+  padding:0 3rem;height:68px;
+  display:flex;align-items:center;
+  justify-content:space-between;gap:2rem;
+}
+.logo{text-decoration:none;display:flex;flex-direction:column;}
+.logo-name{
+  font-family:'Libre Baskerville',serif;
+  font-size:18px;font-weight:700;
+  color:var(--navy);letter-spacing:0.5px;
+  line-height:1;
+}
+.logo-sub{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;font-weight:300;
+  color:var(--green);letter-spacing:3px;
+  text-transform:uppercase;margin-top:3px;
+}
+.nav-center{
+  display:flex;gap:0;
+  border-left:1px solid var(--border);
+  border-right:1px solid var(--border);
+}
+.nav-item{
+  padding:0 1.5rem;height:68px;
+  display:flex;align-items:center;
+  font-size:12px;font-weight:400;
+  letter-spacing:0.5px;
+  color:var(--gray);text-decoration:none;
+  border-right:1px solid var(--border);
+  transition:all 0.2s;
+  position:relative;
+}
+.nav-item::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:2px;
+  background:var(--navy);
+  transform:scaleX(0);transition:transform 0.2s;
+}
+.nav-item:hover{color:var(--navy);background:var(--platinum2);}
+.nav-item:hover::after{transform:scaleX(1);}
+.nav-item:last-child{border-right:none;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.btn-nav-secondary{
+  padding:8px 18px;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--ink);
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:11px;font-weight:500;
+  letter-spacing:1px;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;
+  transition:all 0.2s;
+}
+.btn-nav-secondary:hover{border-color:var(--navy);color:var(--navy);}
+.btn-nav-primary{
+  padding:9px 22px;
+  background:var(--navy);
+  color:var(--white);
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:11px;font-weight:500;
+  letter-spacing:1px;text-transform:uppercase;
+  border:none;cursor:pointer;
+  text-decoration:none;
+  transition:background 0.2s;
+}
+.btn-nav-primary:hover{background:var(--navy2);}
+
+/* ── HERO ── */
+.hero{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  overflow:hidden;
+}
+.hero-inner{
+  max-width:1400px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 480px;
+  min-height:calc(100vh - 100px);
+}
+.hero-left{
+  padding:5rem 4rem 5rem 3rem;
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;
+  justify-content:center;
+  position:relative;
+}
+.hero-left::before{
+  content:'';position:absolute;
+  top:0;left:0;bottom:0;width:4px;
+  background:linear-gradient(to bottom,var(--navy),var(--green));
+}
+.hero-kicker{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:2rem;
+}
+.kicker-badge{
+  background:var(--navy);
+  color:var(--platinum);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;font-weight:400;
+  letter-spacing:3px;text-transform:uppercase;
+  padding:5px 12px;
+}
+.kicker-line{
+  flex:1;max-width:60px;height:1px;
+  background:var(--border);
+}
+.kicker-text{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;font-weight:300;
+  color:var(--gray);letter-spacing:2px;
+  text-transform:uppercase;
+}
+.hero-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(2.8rem,4.5vw,5rem);
+  font-weight:700;line-height:1.08;
+  color:var(--navy);margin-bottom:1.25rem;
+  letter-spacing:-0.5px;
+}
+.hero-title em{
+  font-style:italic;
+  color:var(--green2);
+}
+.hero-rule{
+  width:80px;height:3px;
+  background:linear-gradient(90deg,var(--navy),var(--green));
+  margin-bottom:1.5rem;
+}
+.hero-desc{
+  font-size:16px;font-weight:300;
+  line-height:1.85;color:var(--gray);
+  max-width:580px;margin-bottom:2.5rem;
+}
+.hero-disclaimer{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;font-weight:300;
+  color:var(--red);letter-spacing:1px;
+  border-left:2px solid var(--red);
+  padding-left:10px;margin-bottom:2.5rem;
+  line-height:1.8;
+}
+.hero-actions{display:flex;gap:1rem;margin-bottom:3rem;}
+.btn-primary{
+  padding:13px 32px;
+  background:var(--navy);color:var(--white);
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;
+  border:none;cursor:pointer;
+  text-decoration:none;display:inline-block;
+  transition:background 0.2s;
+}
+.btn-primary:hover{background:var(--navy2);}
+.btn-secondary{
+  padding:12px 32px;
+  background:transparent;
+  color:var(--navy);
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;
+  border:1px solid var(--navy);
+  cursor:pointer;text-decoration:none;
+  display:inline-block;transition:all 0.2s;
+}
+.btn-secondary:hover{background:var(--navy);color:var(--white);}
+.hero-metrics{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--border);
+  border-left:1px solid var(--border);
+}
+.metric{
+  padding:1.25rem 1.5rem;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.metric-value{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.8rem;font-weight:700;
+  color:var(--navy);line-height:1;
+  margin-bottom:4px;
+}
+.metric-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;font-weight:300;
+  color:var(--gray);letter-spacing:2px;
+  text-transform:uppercase;
+}
+.metric-change{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--green2);
+  margin-top:4px;
+}
+
+/* Hero right — form panel */
+.hero-right{
+  background:var(--platinum2);
+  border-left:1px solid var(--border);
+  display:flex;flex-direction:column;
+}
+.form-panel-header{
+  background:var(--navy);
+  padding:1.75rem 2rem;
+  border-bottom:3px solid var(--green);
+}
+.form-panel-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--white);margin-bottom:4px;
+}
+.form-panel-sub{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;font-weight:300;
+  color:rgba(232,228,220,0.6);
+  letter-spacing:2px;text-transform:uppercase;
+}
+.form-panel-body{padding:1.75rem 2rem;flex:1;}
+.field{margin-bottom:1.25rem;}
+.field-label{
+  display:block;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;font-weight:400;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--gray);margin-bottom:6px;
+}
+.field-input{
+  width:100%;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-bottom:2px solid var(--navy);
+  color:var(--ink);
+  padding:10px 12px;
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:13px;font-weight:300;
+  outline:none;
+  transition:border-color 0.2s;
+  appearance:none;
+}
+.field-input:focus{border-bottom-color:var(--green);}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.field-select{
+  width:100%;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-bottom:2px solid var(--navy);
+  color:var(--ink);
+  padding:10px 12px;
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:13px;font-weight:300;
+  outline:none;cursor:pointer;
+}
+.contact-prefs{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:6px;margin-top:4px;
+}
+.pref-btn{
+  padding:8px 4px;text-align:center;
+  background:var(--white);
+  border:1px solid var(--border);
+  font-size:10px;font-weight:400;
+  letter-spacing:1px;text-transform:uppercase;
+  color:var(--gray);cursor:pointer;
+  transition:all 0.15s;
+  font-family:'IBM Plex Mono',monospace;
+}
+.pref-btn.active,.pref-btn:hover{
+  background:var(--navy);color:var(--white);
+  border-color:var(--navy);
+}
+.btn-submit{
+  width:100%;padding:13px;
+  background:var(--green);color:var(--white);
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;
+  border:none;cursor:pointer;
+  margin-top:0.5rem;transition:background 0.2s;
+}
+.btn-submit:hover{background:var(--green2);}
+.form-security{
+  padding:1rem 2rem;
+  background:var(--platinum);
+  border-top:1px solid var(--border);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;font-weight:300;
+  color:var(--gray);letter-spacing:1px;
+  line-height:1.8;
+  display:flex;align-items:flex-start;gap:8px;
+}
+.security-icon{font-size:12px;margin-top:1px;}
+
+/* ── SERVICES STRIP ── */
+.services-strip{
+  background:var(--navy);
+  border-bottom:3px solid var(--green);
+  overflow:hidden;
+}
+.strip-inner{
+  max-width:1400px;margin:0 auto;
+  padding:0 3rem;
+  display:flex;
+}
+.strip-item{
+  flex:1;padding:1.5rem 1.25rem;
+  border-right:1px solid rgba(255,255,255,0.06);
+  transition:background 0.2s;cursor:default;
+}
+.strip-item:hover{background:rgba(255,255,255,0.04);}
+.strip-item:last-child{border-right:none;}
+.strip-num{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--green3);
+  letter-spacing:2px;margin-bottom:6px;
+}
+.strip-name{
+  font-family:'Libre Baskerville',serif;
+  font-size:13px;font-weight:400;
+  color:var(--platinum);line-height:1.3;
+}
+
+/* ── SERVICES DETAIL ── */
+.services{
+  padding:100px 0;
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+}
+.container{max-width:1400px;margin:0 auto;padding:0 3rem;}
+.section-tag{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:3rem;
+}
+.tag-num{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;font-weight:400;
+  color:var(--navy);letter-spacing:3px;
+  background:var(--platinum2);
+  padding:4px 10px;border:1px solid var(--border);
+}
+.tag-line{flex:1;max-width:40px;height:1px;background:var(--border);}
+.tag-text{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--gray);
+  letter-spacing:3px;text-transform:uppercase;
+}
+.section-headline{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(1.8rem,3vw,3rem);
+  font-weight:700;color:var(--navy);
+  line-height:1.15;margin-bottom:0.75rem;
+}
+.section-headline em{font-style:italic;color:var(--green2);}
+.section-sub{
+  font-size:14px;font-weight:300;
+  color:var(--gray);max-width:560px;
+  line-height:1.8;margin-bottom:4rem;
+}
+.services-table{
+  border:1px solid var(--border);
+}
+.service-row{
+  display:grid;
+  grid-template-columns:260px 1fr 200px;
+  border-bottom:1px solid var(--border);
+  transition:background 0.15s;
+}
+.service-row:last-child{border-bottom:none;}
+.service-row:hover{background:var(--platinum2);}
+.service-col-name{
+  padding:2rem;
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;
+  justify-content:center;
+}
+.srv-num{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--gray2);
+  letter-spacing:2px;margin-bottom:8px;
+}
+.srv-name{
+  font-family:'Libre Baskerville',serif;
+  font-size:1rem;font-weight:700;
+  color:var(--navy);line-height:1.3;
+}
+.service-col-detail{
+  padding:2rem 2.5rem;
+  border-right:1px solid var(--border);
+}
+.srv-desc{
+  font-size:13px;font-weight:300;
+  color:var(--gray);line-height:1.8;
+  margin-bottom:1rem;
+}
+.srv-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.srv-tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;font-weight:400;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:3px 8px;
+  border:1px solid var(--border);
+  color:var(--gray);
+}
+.service-col-cta{
+  padding:2rem;
+  display:flex;align-items:center;
+  justify-content:center;
+}
+.srv-cta{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--navy);
+  text-decoration:none;
+  border-bottom:1px solid var(--navy);
+  padding-bottom:2px;
+  transition:color 0.2s;
+}
+.srv-cta:hover{color:var(--green2);border-color:var(--green2);}
+
+/* ── CALCULATOR WIDGET ── */
+.calculator{
+  padding:100px 0;
+  background:var(--navy);
+}
+.calc-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:start;
+}
+.calc-left{}
+.calc-tag-white{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:rgba(232,228,220,0.5);
+  letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:1.5rem;display:block;
+}
+.calc-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(1.8rem,3vw,2.8rem);
+  font-weight:700;color:var(--white);
+  line-height:1.15;margin-bottom:1rem;
+}
+.calc-title em{font-style:italic;color:var(--green3);}
+.calc-desc{
+  font-size:14px;font-weight:300;
+  color:rgba(232,228,220,0.6);
+  line-height:1.8;margin-bottom:2rem;
+}
+.calc-right{
+  background:var(--white);
+  border-top:4px solid var(--green);
+}
+.calc-panel-header{
+  padding:1.5rem 2rem;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;
+  justify-content:space-between;
+}
+.calc-panel-title{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;font-weight:400;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--navy);
+}
+.calc-panel-sub{
+  font-size:10px;color:var(--gray2);
+  font-family:'IBM Plex Mono',monospace;
+}
+.calc-body{padding:2rem;}
+.calc-question{margin-bottom:1.5rem;}
+.calc-q-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;font-weight:400;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--gray);margin-bottom:8px;display:block;
+}
+.calc-options{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.calc-option{
+  padding:10px 12px;
+  background:var(--platinum2);
+  border:1px solid var(--border);
+  font-size:11px;font-weight:400;
+  color:var(--ink);cursor:pointer;
+  text-align:left;
+  font-family:'IBM Plex Sans',sans-serif;
+  transition:all 0.15s;
+}
+.calc-option:hover,.calc-option.selected{
+  background:var(--navy);color:var(--white);
+  border-color:var(--navy);
+}
+.calc-result{
+  background:var(--platinum2);
+  border:1px solid var(--border);
+  border-left:4px solid var(--green);
+  padding:1.5rem;
+  margin-top:1.5rem;
+  display:none;
+}
+.calc-result.show{display:block;}
+.result-score{
+  font-family:'Libre Baskerville',serif;
+  font-size:2.5rem;font-weight:700;
+  color:var(--navy);line-height:1;
+  margin-bottom:4px;
+}
+.result-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--gray);
+  letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.result-text{
+  font-size:13px;font-weight:300;
+  color:var(--gray);line-height:1.8;
+  margin-bottom:1.25rem;
+}
+.result-cta{
+  width:100%;padding:11px;
+  background:var(--navy);color:var(--white);
+  border:none;font-family:'IBM Plex Sans',sans-serif;
+  font-size:10px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;transition:background 0.2s;
+}
+.result-cta:hover{background:var(--navy2);}
+.calc-progress{
+  display:flex;gap:4px;margin-bottom:1.5rem;
+}
+.progress-step{
+  flex:1;height:3px;background:var(--border);
+  transition:background 0.3s;
+}
+.progress-step.done{background:var(--green);}
+.progress-step.active{background:var(--navy);}
+
+/* ── PRIVACY ── */
+.privacy-section{
+  padding:100px 0;
+  background:var(--platinum2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.privacy-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border:1px solid var(--border);
+  margin-top:3rem;
+}
+.privacy-card{
+  padding:2.5rem 2rem;
+  border-right:1px solid var(--border);
+  position:relative;
+}
+.privacy-card:last-child{border-right:none;}
+.privacy-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:var(--navy);
+  transform:scaleX(0);
+  transition:transform 0.3s;
+  transform-origin:left;
+}
+.privacy-card:hover::before{transform:scaleX(1);}
+.pc-icon{
+  width:40px;height:40px;
+  background:var(--navy);
+  display:flex;align-items:center;
+  justify-content:center;
+  font-size:16px;margin-bottom:1rem;
+}
+.pc-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:1rem;font-weight:700;
+  color:var(--navy);margin-bottom:0.75rem;
+  line-height:1.3;
+}
+.pc-desc{
+  font-size:12px;font-weight:300;
+  color:var(--gray);line-height:1.8;
+}
+.pc-badge{
+  margin-top:1rem;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;font-weight:400;
+  letter-spacing:2px;color:var(--green2);
+  text-transform:uppercase;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials{
+  padding:100px 0;
+  background:var(--white);
+}
+.testimonials-layout{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:4rem;align-items:start;
+  margin-top:3rem;
+}
+.testimonials-left{}
+.tl-stat{
+  padding:2rem;
+  background:var(--navy);
+  margin-bottom:1rem;
+}
+.tl-stat-value{
+  font-family:'Libre Baskerville',serif;
+  font-size:2.5rem;font-weight:700;
+  color:var(--white);line-height:1;
+  margin-bottom:4px;
+}
+.tl-stat-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:rgba(232,228,220,0.5);
+  letter-spacing:2px;text-transform:uppercase;
+}
+.testimonials-right{
+  display:flex;flex-direction:column;gap:1px;
+  background:var(--border);
+}
+.testimonial{
+  background:var(--white);
+  padding:2rem 2.5rem;
+  transition:background 0.15s;
+}
+.testimonial:hover{background:var(--platinum2);}
+.t-text{
+  font-family:'Libre Baskerville',serif;
+  font-size:1rem;font-weight:400;
+  font-style:italic;color:var(--ink2);
+  line-height:1.8;margin-bottom:1.25rem;
+}
+.t-meta{
+  display:flex;align-items:center;
+  justify-content:space-between;
+}
+.t-author{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;font-weight:400;
+  color:var(--gray);letter-spacing:1px;
+}
+.t-service{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--green2);
+  letter-spacing:1px;text-transform:uppercase;
+  border:1px solid var(--green3);
+  padding:2px 8px;
+}
+
+/* ── SEO SECTION ── */
+.seo-section{
+  padding:100px 0;
+  background:var(--platinum2);
+  border-top:1px solid var(--border);
+}
+.seo-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;
+}
+.keyword-table{
+  border:1px solid var(--border);
+  background:var(--white);
+  margin-top:1.5rem;
+}
+.keyword-row{
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  padding:12px 1.25rem;
+  border-bottom:1px solid var(--border);
+  align-items:center;
+}
+.keyword-row:last-child{border-bottom:none;}
+.keyword-row:first-child{
+  background:var(--navy);
+}
+.keyword-row:first-child span{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:rgba(232,228,220,0.6);
+  letter-spacing:2px;text-transform:uppercase;
+}
+.kw-term{
+  font-size:12px;font-weight:400;color:var(--ink);
+}
+.kw-vol{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--gray);
+  text-align:right;
+}
+.kw-diff{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;padding:2px 6px;
+  text-transform:uppercase;letter-spacing:1px;
+}
+.diff-high{background:#FEF3C7;color:#92400E;}
+.diff-med{background:#D1FAE5;color:#065F46;}
+.seo-features{
+  display:flex;flex-direction:column;gap:1rem;
+  margin-top:1.5rem;
+}
+.seo-feature{
+  display:flex;align-items:flex-start;gap:1rem;
+  padding:1rem 1.25rem;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-left:3px solid var(--navy);
+}
+.seof-title{
+  font-size:12px;font-weight:500;
+  color:var(--navy);margin-bottom:3px;
+  letter-spacing:0.3px;
+}
+.seof-desc{
+  font-size:11px;font-weight:300;
+  color:var(--gray);line-height:1.7;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);
+  border-top:3px solid var(--green);
+}
+.footer-main{
+  max-width:1400px;margin:0 auto;
+  padding:4rem 3rem 3rem;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:3rem;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.footer-brand{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.3rem;font-weight:700;
+  color:var(--white);margin-bottom:6px;
+}
+.footer-brand-mono{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--green3);
+  letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:1.25rem;display:block;
+}
+.footer-about{
+  font-size:12px;font-weight:300;
+  color:rgba(232,228,220,0.5);
+  line-height:1.9;margin-bottom:1.5rem;
+}
+.footer-col-head{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;font-weight:400;
+  letter-spacing:3px;text-transform:uppercase;
+  color:rgba(232,228,220,0.4);
+  margin-bottom:1rem;padding-bottom:0.75rem;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.footer-links a{
+  font-size:12px;font-weight:300;
+  color:rgba(232,228,220,0.5);
+  text-decoration:none;transition:color 0.2s;
+  letter-spacing:0.3px;
+}
+.footer-links a:hover{color:var(--platinum);}
+.footer-bottom{
+  max-width:1400px;margin:0 auto;
+  padding:1.5rem 3rem;
+  display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.footer-copy{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:rgba(232,228,220,0.3);
+  letter-spacing:1px;
+}
+.footer-infra{
+  display:flex;align-items:center;gap:8px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:rgba(232,228,220,0.3);
+  letter-spacing:1px;
+}
+.infra-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:#22c55e;
+  box-shadow:0 0 6px rgba(34,197,94,0.5);
+}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.fade-in-d1{transition-delay:0.1s;}
+.fade-in-d2{transition-delay:0.2s;}
+.fade-in-d3{transition-delay:0.3s;}
+
+@media(max-width:1100px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  .services-strip .strip-inner{flex-wrap:wrap;}
+  .services-table .service-row{grid-template-columns:1fr;}
+  .service-col-cta{border-top:1px solid var(--border);}
+  .calc-inner{grid-template-columns:1fr;}
+  .privacy-grid{grid-template-columns:1fr 1fr;}
+  .testimonials-layout{grid-template-columns:1fr;}
+  .seo-grid{grid-template-columns:1fr;}
+  .footer-main{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .topbar{display:none;}
+  nav .nav-center{display:none;}
+  .container{padding:0 1.5rem;}
+  .hero-left{padding:3rem 1.5rem;}
+  .hero-metrics{grid-template-columns:1fr 1fr;}
+  .privacy-grid{grid-template-columns:1fr;}
+  .services-strip .strip-inner{padding:0 1.5rem;flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <div class="topbar-item">🔒 <strong>Offshore-Hosted</strong> · Hetzner, Germany</div>
+      <div class="topbar-item">📍 <strong>Not US-based</strong> · Outside US Jurisdiction</div>
+      <div class="topbar-item">⚡ <strong>Response SLA:</strong> 24 hrs</div>
+    </div>
+    <div class="topbar-right">
+      <a href="#" class="topbar-link">Telegram</a>
+      <div class="topbar-divider"></div>
+      <a href="#" class="topbar-link">WhatsApp</a>
+      <div class="topbar-divider"></div>
+      <a href="#" class="topbar-link">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-name">Vantage Financial Group</div>
+      <div class="logo-sub">Private Advisory · Est. 2014</div>
+    </a>
+    <div class="nav-center">
+      <a href="#services" class="nav-item">Services</a>
+      <a href="#privacy" class="nav-item">Privacy & Hosting</a>
+      <a href="#calculator" class="nav-item">Financial Score</a>
+      <a href="#seo" class="nav-item">SEO Strategy</a>
+      <a href="#testimonials" class="nav-item">Clients</a>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="btn-nav-secondary">Our Process</a>
+      <a href="#contact" class="btn-nav-primary">Private Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-left fade-in">
+      <div class="hero-kicker">
+        <div class="kicker-badge">Private Advisory</div>
+        <div class="kicker-line"></div>
+        <div class="kicker-text">High-Net-Worth Financial Services</div>
+      </div>
+      <h1 class="hero-title">
+        The Financial Firm<br>
+        Your Wealth<br>
+        <em>Actually Requires.</em>
+      </h1>
+      <div class="hero-rule"></div>
+      <p class="hero-desc">Full-service accounting, fractional CFO leadership, asset protection, anonymous incorporation, and aggressive-yet-legal tax strategy. We serve principals with complex structures who need results — not bookkeepers.</p>
+      <div class="hero-disclaimer">
+        We do not offer solo bookkeeping services.<br>
+        Minimum engagement: clients with $500K+ in assets or $250K+ annual revenue.
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Request Private Consultation</a>
+        <a href="#calculator" class="btn-secondary">Check Your Financial Score</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric">
+          <div class="metric-value">$2.4B+</div>
+          <div class="metric-label">Assets Under Advisory</div>
+          <div class="metric-change">↑ 18% YoY</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">340+</div>
+          <div class="metric-label">HNW Clients Served</div>
+          <div class="metric-change">↑ Selective intake</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">100%</div>
+          <div class="metric-label">Offshore Data Hosting</div>
+          <div class="metric-change">↑ EU Jurisdiction</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEAD FORM -->
+    <div class="hero-right fade-in fade-in-d2" id="contact">
+      <div class="form-panel-header">
+        <div>
+          <div class="form-panel-title">Begin Confidential Inquiry</div>
+          <div class="form-panel-sub">Encrypted · Offshore · Never Disclosed</div>
+        </div>
+      </div>
+      <div class="form-panel-body">
+        <div class="field field-row">
+          <div>
+            <label class="field-label">First Name</label>
+            <input type="text" class="field-input" placeholder="Jonathan">
+          </div>
+          <div>
+            <label class="field-label">Last Name</label>
+            <input type="text" class="field-input" placeholder="Reed">
+          </div>
+        </div>
+        <div class="field">
+          <label class="field-label">Email Address</label>
+          <input type="email" class="field-input" placeholder="j.reed@domain.com">
+        </div>
+        <div class="field">
+          <label class="field-label">Phone / WhatsApp</label>
+          <input type="tel" class="field-input" placeholder="+1 000 000 0000">
+        </div>
+        <div class="field">
+          <label class="field-label">Preferred Contact Method</label>
+          <div class="contact-prefs">
+            <button class="pref-btn active" onclick="selectPref(this)">Email</button>
+            <button class="pref-btn" onclick="selectPref(this)">Phone</button>
+            <button class="pref-btn" onclick="selectPref(this)">WhatsApp</button>
+            <button class="pref-btn" onclick="selectPref(this)">Telegram</button>
+            <button class="pref-btn" onclick="selectPref(this)">Text/SMS</button>
+            <button class="pref-btn" onclick="selectPref(this)">Signal</button>
+          </div>
+        </div>
+        <div class="field">
+          <label class="field-label">Primary Service Need</label>
+          <select class="field-select">
+            <option>— Select Service —</option>
+            <option>Fractional CFO Services</option>
+            <option>Asset Protection & Anonymous LLC</option>
+            <option>Tax Strategy & Planning</option>
+            <option>Full-Service Accounting (AP/AR/Payroll)</option>
+            <option>Compilation, Review or Audit</option>
+            <option>Offshore Structuring & Privacy</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label">Asset Range (Confidential)</label>
+          <select class="field-select">
+            <option>— Select Range —</option>
+            <option>$500K – $1M</option>
+            <option>$1M – $5M</option>
+            <option>$5M – $25M</option>
+            <option>$25M+</option>
+            <option>Prefer not to disclose</option>
+          </select>
+        </div>
+        <button class="btn-submit" onclick="submitInquiry(this)">Submit Confidential Inquiry →</button>
+      </div>
+      <div class="form-security">
+        <span class="security-icon">🔐</span>
+        <span>256-bit encrypted · Hosted on Hetzner Germany · Outside US jurisdiction · No Patriot Act exposure · Never sold or disclosed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES STRIP -->
+<div class="services-strip">
+  <div class="strip-inner">
+    <div class="strip-item"><div class="strip-num">01</div><div class="strip-name">Full-Service Accounting</div></div>
+    <div class="strip-item"><div class="strip-num">02</div><div class="strip-name">Fractional CFO</div></div>
+    <div class="strip-item"><div class="strip-num">03</div><div class="strip-name">Compilations & Audits</div></div>
+    <div class="strip-item"><div class="strip-num">04</div><div class="strip-name">Asset Protection</div></div>
+    <div class="strip-item"><div class="strip-num">05</div><div class="strip-name">Tax Strategy</div></div>
+    <div class="strip-item"><div class="strip-num">06</div><div class="strip-name">Offshore Advisory</div></div>
+  </div>
+</div>
+
+<!-- SERVICES DETAIL -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-tag fade-in">
+      <div class="tag-num">§ 01</div>
+      <div class="tag-line"></div>
+      <div class="tag-text">What We Do</div>
+    </div>
+    <h2 class="section-headline fade-in">Six Services.<br><em>One Trusted Firm.</em></h2>
+    <p class="section-sub fade-in">Every engagement is confidential. Every structure is bespoke. We do not offer standardized packages — we engineer solutions for your specific situation.</p>
+    <div class="services-table fade-in">
+      <div class="service-row">
+        <div class="service-col-name">
+          <div class="srv-num">SVC — 01</div>
+          <div class="srv-name">Full-Service Accounting</div>
+        </div>
+        <div class="service-col-detail">
+          <p class="srv-desc">Institutional-grade accounting operations for businesses that demand accuracy, compliance, and real-time financial visibility. AP, AR, payroll, and monthly close managed by senior accountants.</p>
+          <div class="srv-tags">
+            <span class="srv-tag">AP / AR</span>
+            <span class="srv-tag">Payroll</span>
+            <span class="srv-tag">Monthly Close</span>
+            <span class="srv-tag">Cash Flow</span>
+          </div>
+        </div>
+        <div class="service-col-cta"><a href="#contact" class="srv-cta">Inquire →</a></div>
+      </div>
+      <div class="service-row">
+        <div class="service-col-name">
+          <div class="srv-num">SVC — 02</div>
+          <div class="srv-name">Fractional CFO</div>
+        </div>
+        <div class="service-col-detail">
+          <p class="srv-desc">C-suite financial leadership on a fractional basis. Strategic oversight, investor relations, forecasting, and board-level reporting — without full-time overhead. Typically 10–20 hours per month.</p>
+          <div class="srv-tags">
+            <span class="srv-tag">Strategy</span>
+            <span class="srv-tag">Forecasting</span>
+            <span class="srv-tag">Investor Relations</span>
+            <span class="srv-tag">Board Reporting</span>
+          </div>
+        </div>
+        <div class="service-col-cta"><a href="#contact" class="srv-cta">Inquire →</a></div>
+      </div>
+      <div class="service-row">
+        <div class="service-col-name">
+          <div class="srv-num">SVC — 03</div>
+          <div class="srv-name">Compilations, Reviews & Audits</div>
+        </div>
+        <div class="service-col-detail">
+          <p class="srv-desc">Rigorous financial attestation trusted by institutional lenders, private equity, and regulatory bodies. We issue compilations, review engagements, and full audit opinions with institutional-grade precision.</p>
+          <div class="srv-tags">
+            <span class="srv-tag">Compilations</span>
+            <span class="srv-tag">Review Engagements</span>
+            <span class="srv-tag">Full Audits</span>
+            <span class="srv-tag">Regulatory</span>
+          </div>
+        </div>
+        <div class="service-col-cta"><a href="#contact" class="srv-cta">Inquire →</a></div>
+      </div>
+      <div class="service-row">
+        <div class="service-col-name">
+          <div class="srv-num">SVC — 04</div>
+          <div class="srv-name">Asset Protection</div>
+        </div>
+        <div class="service-col-detail">
+          <p class="srv-desc">Legally shield your assets from litigation, creditors, and judgment enforcement. Anonymous LLC formation, agent of service arrangements, and multi-layer entity structures that create genuine legal separation.</p>
+          <div class="srv-tags">
+            <span class="srv-tag">Anonymous LLC</span>
+            <span class="srv-tag">Agent of Service</span>
+            <span class="srv-tag">Multi-Entity</span>
+            <span class="srv-tag">Trusts</span>
+          </div>
+        </div>
+        <div class="service-col-cta"><a href="#contact" class="srv-cta">Inquire →</a></div>
+      </div>
+      <div class="service-row">
+        <div class="service-col-name">
+          <div class="srv-num">SVC — 05</div>
+          <div class="srv-name">Tax Strategy & Advisory</div>
+        </div>
+        <div class="service-col-detail">
+          <p class="srv-desc">Proactive, aggressive-yet-legal tax minimization for high-income earners, business owners, and investors with complex structures. Average client reduces effective tax rate by 30–45% in year one.</p>
+          <div class="srv-tags">
+            <span class="srv-tag">HNW Tax Planning</span>
+            <span class="srv-tag">Entity Strategy</span>
+            <span class="srv-tag">Real Estate</span>
+            <span class="srv-tag">International</span>
+          </div>
+        </div>
+        <div class="service-col-cta"><a href="#contact" class="srv-cta">Inquire →</a></div>
+      </div>
+      <div class="service-row">
+        <div class="service-col-name">
+          <div class="srv-num">SVC — 06</div>
+          <div class="srv-name">Offshore & Privacy Advisory</div>
+        </div>
+        <div class="service-col-detail">
+          <p class="srv-desc">Jurisdictional privacy, offshore entity formation, and digital data sovereignty for principals who operate internationally or require protection from US regulatory exposure.</p>
+          <div class="srv-tags">
+            <span class="srv-tag">Offshore Entities</span>
+            <span class="srv-tag">Jurisdictional Privacy</span>
+            <span class="srv-tag">Cross-Border Tax</span>
+            <span class="srv-tag">Digital Privacy</span>
+          </div>
+        </div>
+        <div class="service-col-cta"><a href="#contact" class="srv-cta">Inquire →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCIAL SCORE CALCULATOR -->
+<section class="calculator" id="calculator">
+  <div class="container">
+    <div class="calc-inner">
+      <div class="fade-in">
+        <span class="calc-tag-white">Interactive Tool</span>
+        <h2 class="calc-title">What Is Your<br><em>Financial Exposure Score?</em></h2>
+        <p class="calc-desc">Answer 4 questions to receive an instant assessment of your financial risk exposure, tax optimization opportunity, and asset protection gap. No email required.</p>
+        <div style="margin-top:2rem;">
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div style="display:flex;align-items:center;gap:1rem;padding:1rem;border:1px solid rgba(255,255,255,0.06);">
+              <div style="width:32px;height:32px;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:12px;color:white;">✓</div>
+              <div>
+                <div style="font-size:12px;font-weight:400;color:var(--platinum);margin-bottom:2px;">No personal data required</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(232,228,220,0.4);letter-spacing:1px;">Anonymous assessment</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;padding:1rem;border:1px solid rgba(255,255,255,0.06);">
+              <div style="width:32px;height:32px;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:12px;color:white;">✓</div>
+              <div>
+                <div style="font-size:12px;font-weight:400;color:var(--platinum);margin-bottom:2px;">Results in under 60 seconds</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(232,228,220,0.4);letter-spacing:1px;">4 questions only</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;padding:1rem;border:1px solid rgba(255,255,255,0.06);">
+              <div style="width:32px;height:32px;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:12px;color:white;">✓</div>
+              <div>
+                <div style="font-size:12px;font-weight:400;color:var(--platinum);margin-bottom:2px;">Actionable recommendations included</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(232,228,220,0.4);letter-spacing:1px;">Specific to your situation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in fade-in-d2">
+        <div class="calc-right">
+          <div class="calc-panel-header">
+            <div class="calc-panel-title">Financial Exposure Assessment</div>
+            <div class="calc-panel-sub">4 Questions · 60 Seconds</div>
+          </div>
+          <div class="calc-body">
+            <div class="calc-progress" id="calc-progress">
+              <div class="progress-step active"></div>
+              <div class="progress-step"></div>
+              <div class="progress-step"></div>
+              <div class="progress-step"></div>
+            </div>
+            <div id="calc-questions">
+              <div class="calc-question" id="q1">
+                <span class="calc-q-label">Q1 of 4 — Annual Revenue / Income</span>
+                <div class="calc-options">
+                  <button class="calc-option" onclick="selectOption(this,1)">Under $250K</button>
+                  <button class="calc-option" onclick="selectOption(this,1)">$250K – $1M</button>
+                  <button class="calc-option" onclick="selectOption(this,1)">$1M – $5M</button>
+                  <button class="calc-option" onclick="selectOption(this,1)">Over $5M</button>
+                </div>
+              </div>
+              <div class="calc-question" id="q2" style="display:none;">
+                <span class="calc-q-label">Q2 of 4 — Asset Protection Structure</span>
+                <div class="calc-options">
+                  <button class="calc-option" onclick="selectOption(this,2)">No structure in place</button>
+                  <button class="calc-option" onclick="selectOption(this,2)">Basic LLC only</button>
+                  <button class="calc-option" onclick="selectOption(this,2)">Multiple entities</button>
+                  <button class="calc-option" onclick="selectOption(this,2)">Offshore + domestic</button>
+                </div>
+              </div>
+              <div class="calc-question" id="q3" style="display:none;">
+                <span class="calc-q-label">Q3 of 4 — Current Tax Strategy</span>
+                <div class="calc-options">
+                  <button class="calc-option" onclick="selectOption(this,3)">Standard filing only</button>
+                  <button class="calc-option" onclick="selectOption(this,3)">Basic deductions</button>
+                  <button class="calc-option" onclick="selectOption(this,3)">Active tax planning</button>
+                  <button class="calc-option" onclick="selectOption(this,3)">Advanced strategies</button>
+                </div>
+              </div>
+              <div class="calc-question" id="q4" style="display:none;">
+                <span class="calc-q-label">Q4 of 4 — CFO / Financial Leadership</span>
+                <div class="calc-options">
+                  <button class="calc-option" onclick="selectOption(this,4)">No CFO function</button>
+                  <button class="calc-option" onclick="selectOption(this,4)">Bookkeeper only</button>
+                  <button class="calc-option" onclick="selectOption(this,4)">Part-time CFO</button>
+                  <button class="calc-option" onclick="selectOption(this,4)">Full-time CFO</button>
+                </div>
+              </div>
+            </div>
+            <div class="calc-result" id="calc-result">
+              <div class="result-score" id="result-score">72</div>
+              <div class="result-label">Exposure Score — High Risk</div>
+              <p class="result-text" id="result-text">Your current structure leaves significant exposure in tax optimization and asset protection. Based on your profile, estimated annual tax savings opportunity: $45,000–$180,000. Asset protection gap: High.</p>
+              <button class="result-cta" onclick="scrollToContact()">Schedule Private Consultation to Address This →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section class="privacy-section" id="privacy">
+  <div class="container">
+    <div class="section-tag fade-in">
+      <div class="tag-num">§ 02</div>
+      <div class="tag-line"></div>
+      <div class="tag-text">Infrastructure & Jurisdiction</div>
+    </div>
+    <h2 class="section-headline fade-in">Your Data Is<br><em>Not on US Servers.</em></h2>
+    <p class="section-sub fade-in">Every byte of client data is hosted on EU-jurisdiction servers outside the reach of US subpoenas, FISA warrants, and Patriot Act disclosure requirements. Privacy by architecture, not policy.</p>
+    <div class="privacy-grid fade-in">
+      <div class="privacy-card">
+        <div class="pc-icon">🇩🇪</div>
+        <div class="pc-title">Hetzner Germany — Primary</div>
+        <p class="pc-desc">ISO 27001 certified. German federal privacy law. GDPR-protected. No US jurisdiction. Primary hosting for all client data and the production database.</p>
+        <div class="pc-badge">✓ Online · 99.99% Uptime</div>
+      </div>
+      <div class="privacy-card">
+        <div class="pc-icon">🇫🇷</div>
+        <div class="pc-title">OVHcloud France — Backup</div>
+        <p class="pc-desc">French data sovereignty law. Redundant EU backup infrastructure. Zero US data residency. Automatic failover within EU jurisdiction only.</p>
+        <div class="pc-badge">✓ Online · EU Jurisdiction</div>
+      </div>
+      <div class="privacy-card">
+        <div class="pc-icon">🔐</div>
+        <div class="pc-title">AES-256 Encryption</div>
+        <p class="pc-desc">All data encrypted in transit (TLS 1.3) and at rest (AES-256). Zero-knowledge architecture for the most sensitive financial records and client communications.</p>
+        <div class="pc-badge">✓ Active · All Data Encrypted</div>
+      </div>
+      <div class="privacy-card">
+        <div class="pc-icon">🚫</div>
+        <div class="pc-title">No US Jurisdiction Risk</div>
+        <p class="pc-desc">No Patriot Act exposure. No CLOUD Act jurisdiction. No NSL vulnerability. Your financial records cannot be accessed by US government agencies through our infrastructure.</p>
+        <div class="pc-badge">✓ Verified · Outside US Law</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-tag fade-in">
+      <div class="tag-num">§ 03</div>
+      <div class="tag-line"></div>
+      <div class="tag-text">Client Results</div>
+    </div>
+    <h2 class="section-headline fade-in">Results Without<br><em>Names. By Design.</em></h2>
+    <div class="testimonials-layout fade-in">
+      <div class="testimonials-left">
+        <div class="tl-stat">
+          <div class="tl-stat-value">38→19%</div>
+          <div class="tl-stat-label">Avg Tax Rate Reduction · Year 1</div>
+        </div>
+        <div class="tl-stat" style="background:var(--green);">
+          <div class="tl-stat-value">$4M+</div>
+          <div class="tl-stat-label">Capital Raised After CFO Engagement</div>
+        </div>
+        <div class="tl-stat" style="background:var(--navy2);">
+          <div class="tl-stat-value">$7.2M</div>
+          <div class="tl-stat-label">Assets Protected from Litigation</div>
+        </div>
+      </div>
+      <div class="testimonials-right">
+        <div class="testimonial">
+          <p class="t-text">"Their asset protection structure created a firewall our opposing counsel called 'among the most sophisticated they'd encountered.' The anonymous LLC layering prevented what would have been a catastrophic judgment."</p>
+          <div class="t-meta">
+            <span class="t-author">R.T. — Real Estate Investor · $12M Portfolio</span>
+            <span class="t-service">Asset Protection</span>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="t-text">"We went from chaotic spreadsheets to institutional-grade financials in 90 days. The Fractional CFO engagement directly enabled our Series A close at a $14M valuation. Worth every dollar."</p>
+          <div class="t-meta">
+            <span class="t-author">M.K. — SaaS Founder · Series A</span>
+            <span class="t-service">Fractional CFO</span>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="t-text">"My effective tax rate dropped from 38% to 19% in year one. Entirely legal. The combination of entity restructuring and timing strategies exceeded every projection they gave me."</p>
+          <div class="t-meta">
+            <span class="t-author">D.V. — HNW Individual · $8M Net Worth</span>
+            <span class="t-service">Tax Strategy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO STRATEGY SECTION -->
+<section class="seo-section" id="seo">
+  <div class="container">
+    <div class="seo-grid">
+      <div class="fade-in">
+        <div class="section-tag">
+          <div class="tag-num">§ 04</div>
+          <div class="tag-line"></div>
+          <div class="tag-text">SEO Architecture</div>
+        </div>
+        <h2 class="section-headline">Ranking for the<br><em>Right Keywords.</em></h2>
+        <p class="section-sub">Advanced on-page SEO architecture targeting high-intent, high-value keywords in competitive financial advisory verticals.</p>
+        <div class="seo-features">
+          <div class="seo-feature">
+            <div>
+              <div class="seof-title">Schema.org Financial Services Markup</div>
+              <div class="seof-desc">Full schema implementation for AccountingService, FinancialService, and Review entities — maximizing SERP rich results.</div>
+            </div>
+          </div>
+          <div class="seo-feature">
+            <div>
+              <div class="seof-title">Core Web Vitals — Lighthouse 95+</div>
+              <div class="seof-desc">LCP under 1.2s, CLS near zero, FID under 50ms. Offshore CDN via Cloudflare for global performance without US data residency.</div>
+            </div>
+          </div>
+          <div class="seo-feature">
+            <div>
+              <div class="seof-title">Long-form Service Pages per Keyword Cluster</div>
+              <div class="seof-desc">Dedicated 2,000+ word pages for each service targeting primary + LSI keyword clusters. Internal linking architecture for topical authority.</div>
+            </div>
+          </div>
+          <div class="seo-feature">
+            <div>
+              <div class="seof-title">Social Media — 6 Platforms + 2 Channels</div>
+              <div class="seof-desc">Setup + management: Facebook, TikTok, Instagram, X/Twitter, LinkedIn, Telegram, WhatsApp Broadcast — all branded to your firm identity.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in fade-in-d2">
+        <div class="keyword-table">
+          <div class="keyword-row">
+            <span>Target Keyword</span>
+            <span>Monthly Volume</span>
+            <span>Opportunity</span>
+          </div>
+          <div class="keyword-row">
+            <span class="kw-term">Fractional CFO services</span>
+            <span class="kw-vol">18,100/mo</span>
+            <span class="kw-diff diff-high">High</span>
+          </div>
+          <div class="keyword-row">
+            <span class="kw-term">Asset protection LLC anonymous</span>
+            <span class="kw-vol">9,900/mo</span>
+            <span class="kw-diff diff-med">Medium</span>
+          </div>
+          <div class="keyword-row">
+            <span class="kw-term">Fractional CFO for small business</span>
+            <span class="kw-vol">12,100/mo</span>
+            <span class="kw-diff diff-high">High</span>
+          </div>
+          <div class="keyword-row">
+            <span class="kw-term">High net worth tax advisor</span>
+            <span class="kw-vol">6,600/mo</span>
+            <span class="kw-diff diff-med">Medium</span>
+          </div>
+          <div class="keyword-row">
+            <span class="kw-term">Anonymous incorporation services</span>
+            <span class="kw-vol">4,400/mo</span>
+            <span class="kw-diff diff-med">Medium</span>
+          </div>
+          <div class="keyword-row">
+            <span class="kw-term">Offshore accounting firm private</span>
+            <span class="kw-vol">2,900/mo</span>
+            <span class="kw-diff diff-med">Medium</span>
+          </div>
+          <div class="keyword-row">
+            <span class="kw-term">Tax strategy high income earners</span>
+            <span class="kw-vol">8,100/mo</span>
+            <span class="kw-diff diff-high">High</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="footer-brand">Vantage Financial Group</div>
+      <span class="footer-brand-mono">Private Advisory · Est. 2014</span>
+      <p class="footer-about">Full-service accounting, fractional CFO, asset protection and tax strategy for high-net-worth individuals and complex businesses. Minimum engagement: $500K+ assets. We do not offer bookkeeping.</p>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(232,228,220,0.3);letter-spacing:1px;line-height:2;">
+        inquiry@vantagefinancial.com<br>
+        Telegram · WhatsApp · Signal (by arrangement)<br>
+        Offshore-incorporated · EU-hosted · No US Jurisdiction
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-head">Services</div>
+      <ul class="footer-links">
+        <li><a href="#">Full-Service Accounting</a></li>
+        <li><a href="#">Fractional CFO</a></li>
+        <li><a href="#">Asset Protection</a></li>
+        <li><a href="#">Tax Strategy</a></li>
+        <li><a href="#">Compilations & Audits</a></li>
+        <li><a href="#">Offshore Advisory</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Privacy</div>
+      <ul class="footer-links">
+        <li><a href="#">Offshore Hosting Policy</a></li>
+        <li><a href="#">Encryption Standards</a></li>
+        <li><a href="#">No US Jurisdiction</a></li>
+        <li><a href="#">GDPR Compliance</a></li>
+        <li><a href="#">Data Retention Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Connect</div>
+      <ul class="footer-links">
+        <li><a href="#">Private Consultation</a></li>
+        <li><a href="#">Telegram Channel</a></li>
+        <li><a href="#">WhatsApp Business</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Vantage Financial Group · All rights reserved · Offshore-incorporated · Not a US entity</div>
+    <div class="footer-infra">
+      <div class="infra-dot"></div>
+      All systems online · Hosted on Hetzner Germany · Outside US Jurisdiction · GDPR Protected
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+// Form pref toggle
+function selectPref(btn){
+  document.querySelectorAll('.pref-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Form submit
+function submitInquiry(btn){
+  btn.textContent='✓ Received — We\'ll Contact You Within 24hrs';
+  btn.style.background='#1B4332';
+  btn.disabled=true;
+}
+
+// Calculator
+let answers = {};
+function selectOption(btn, qNum){
+  const parent = btn.closest('.calc-question');
+  parent.querySelectorAll('.calc-option').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  answers[qNum] = btn.textContent;
+  setTimeout(()=>nextQuestion(qNum), 400);
+}
+
+function nextQuestion(current){
+  const steps = document.querySelectorAll('.progress-step');
+  steps[current-1].classList.remove('active');
+  steps[current-1].classList.add('done');
+
+  if(current < 4){
+    document.getElementById('q'+current).style.display='none';
+    document.getElementById('q'+(current+1)).style.display='block';
+    if(steps[current]) steps[current].classList.add('active');
+  } else {
+    document.getElementById('calc-questions').style.display='none';
+    showResult();
+  }
+}
+
+function showResult(){
+  const result = document.getElementById('calc-result');
+  result.classList.add('show');
+
+  // Score logic
+  let score = 85;
+  if(answers[1] && answers[1].includes('$1M')) score -= 15;
+  if(answers[1] && answers[1].includes('Over')) score -= 20;
+  if(answers[2] && answers[2].includes('Offshore')) score -= 30;
+  if(answers[3] && answers[3].includes('Advanced')) score -= 25;
+  if(answers[4] && answers[4].includes('Full-time')) score -= 20;
+  score = Math.max(20, score);
+
+  document.getElementById('result-score').textContent = score;
+  const textEl = document.getElementById('result-text');
+  if(score >= 70){
+    textEl.textContent = 'Your current structure carries significant exposure. Estimated annual tax savings opportunity: $45K–$180K. Asset protection gap: High. Fractional CFO could add immediate value.';
+  } else if(score >= 40){
+    textEl.textContent = 'Moderate exposure identified. With optimization, estimated tax savings: $20K–$80K annually. Some asset protection gaps exist. A review engagement is recommended.';
+  } else {
+    textEl.textContent = 'Strong existing structure. However, international optimization and advanced offshore strategies could yield further tax efficiency. A strategic review is still advisable.';
+  }
+}
+
+function scrollToContact(){
+  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
